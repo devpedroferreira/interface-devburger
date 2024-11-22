@@ -1,0 +1,68 @@
+/*  
+UNIDADES DE MEDIDA
+
+------ ABSOLUTAS -------
+    1 polegada = 2,54cm/100 = 0,254mm
+    px: (piexel) = 2,54cm/100 = 1 centesimo de 1 polegada = 1px = 0,254mm
+    
+    in: (inches/polegada)
+    cm / mm ( centimetro e milímetro )
+
+------ RELATIVAS -------
+%: calcula o tamanho relativo ao elemento pai
+vw: (view width) 1vw é 1% da largura da janela do navegador
+vh: (view height) 1vh é 1% da altura da janela do navegador
+em: é uma unidade relativa ao elemento pai
+rem: é uma unidade relativa ao elemento raiz
+*/
+
+
+/* inspesionando o site, vemos que a fonte fica 16px pq ela é 100% de 16px*/
+/*
+.pai{
+    font-size: 16px;
+}
+
+.filho{
+    font-size: 100%;
+}
+*/
+
+/* 
+vw: view-width larura da tela em 100 pedacinhos, 1vw= 1pedacinho
+
+vh: view-height altura da tela em 100 pedacinhos, 1vh= 1pedacinho 
+obs: eles se adaptao ao tamnho da tela
+*/
+
+/* 
+em: é sempre relativo ao pai 
+*/
+
+/*
+rem: root vai buscar na raiz
+*/
+.vo{
+    font-size: 16px;
+    background: rgb(0,255,0);
+    width: 50vw;
+    height: 50vh;
+}
+
+.pai{
+    font-size: 32px;
+    width: 50vw;
+    height: 50vh;
+    background:blue;
+    color: #ffffff;
+}
+
+.filho{
+    font-size: 0.5em ;
+    width: 50%;
+    height: 50%;
+    background: red;
+    color: white;
+}
+
+

@@ -1,0 +1,25 @@
+
+h1{
+    font-size: 64px;
+    color:red;
+    font-weight:700; /* largura da letra*/
+    font-family: "Host Grotesk", sans-serif; /* importado do google fonts, code no head*/
+    font-style: italic;
+    text-shadow: 10px 10px 40px #ff0000; /* 4 parametros 1- horizontal 2-vertical 3-fumaça 4-cor*/
+   
+
+}
+
+p{
+    font-size:18px;
+    color:blue;
+    font-weight: 700;/*largura da letra*/
+    font-family: "Host Grotesk", sans-serif;
+    /* font-weight: bold; /* Negrito e bolder muito negrito*/
+    /*line-height: 40px;/* altura da linha*/
+    /*letter-spacing: 3px ; /* espaco entre as letras*/
+    /*text-align: justify;/*alinhamento do texto*/
+    text-transform: capitalize; /* iniciais das palavras MAIUSC*/
+    text-decoration: underline; /* underline */
+}
+
