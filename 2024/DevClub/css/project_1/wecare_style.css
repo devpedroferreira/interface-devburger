@@ -7,7 +7,7 @@
 }
 
 header{
-    margin: 44px 0 144px 76px;/* tecnica do relogio sentido horario*/
+    margin: 44px 0 80px 76px;/* tecnica do relogio sentido horario*/
 }
 
 .header-link{
@@ -34,8 +34,9 @@ header{
 }
 
 .logo-img{
-    width: 568px;
-    height: 500px; 
+    margin-top: 32px;
+    width: 548px;
+    height: 480px; 
     margin-left: 100px;
     display: inline-block;/* quero na mesma linha da section, e quero editar espacamento*/
 
@@ -44,25 +45,26 @@ header{
 section{
     display: inline-block;
     margin-left: 86px;
+    
 }
 
 h1{
    font-weight: 900;
-   font-size: 100px;
-   line-height: 122px;
+   font-size: 90px;
+   line-height: 80px;
    color: #515151; 
 }
 
 h2{
     font-weight: 500;
-    font-size: 58px;
-    line-height: 71px;
+    font-size: 48px;
+    line-height: 60px;
     color: #515151;
 }
 
 p{
-    margin-top: 32px;
-    margin-bottom: 45px;
+    margin-top: 12px;
+    margin-bottom: 10px;
     font-weight: 400;
     font-size: 24px;
     line-height: 29px;
@@ -73,6 +75,8 @@ p{
 }
 
 .main-button{
+    text-align: center;
+    align-items: center;
     background: #adff00;
     border-radius: 20.5px;
     width: 239px;
@@ -84,5 +88,9 @@ p{
     font-size: 30px;
     line-height: 32px;
     color: #000000; 
-    
+}
+
+h5{
+    color: #000000;
+    text-align: right;
 }
