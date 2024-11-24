@@ -5,6 +5,6 @@ From figma.com, introducing for students.
 Lesson CSS, project: We care
 
 tecnologies utilized:
- HTML
 
+ HTML
  CSS
