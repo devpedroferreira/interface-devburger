@@ -7,7 +7,7 @@
 }
 
 header{
-    margin: 44px 0 144px 76px;/* tecnica do relogio sentido horario*/
+    margin: 24px 0 15px 76px;/* tecnica do relogio sentido horario*/
 }
 
 .header-link{
@@ -84,5 +84,7 @@ p{
     font-size: 30px;
     line-height: 32px;
     color: #000000; 
-    
+    display: flex;
+    justify-content: center;
+    padding-top:15px;
 }
