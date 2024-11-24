@@ -2,9 +2,10 @@
 
 From figma.com, introducing for students.
 
-Lesson CSS, project: We care
+Lesson CSS, project: We care, responsive site for petshop.
 
-tecnologies utilized:
+<h3> Tecnologies utilized:</h3>
 
- HTML
- CSS
+<p> HTML</p>
+
+<p> CSS </p>
