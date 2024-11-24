@@ -4,7 +4,7 @@ From figma.com, introducing for students.
 
 Lesson CSS, project: We care
 
-tecnologies utilized:
- HTML
-
- CSS
+<h3>tecnologies utilized:</h3>
+ 
+ <p>HTML</p>
+ <p>CSS</p>
