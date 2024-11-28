@@ -1,0 +1,77 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0; /*Boas praticas, site começa zerado*/
+    padding: 0; /*Boas praticas, site começa zerado*/
+    box-sizing: border-box; /* Elementos nao aumentao com os ajuteste/estilos/bordas */
+    padding-bottom: 20px;
+}
+
+header{
+    margin: 0 0 15px 58px; /*tecnica do relogio sentido horario*/
+    display: inline-block;
+}
+
+.header-links{
+    margin-top: 15px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    padding-right: 30px;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+.header-button{
+    margin-top: 37px;
+    width: 124px;
+    height: 51px;
+    background-color: #85c300;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    line-height: 19px;
+   justify-content: center;
+   padding-top: 15px;
+}
+
+.logo-img{
+    width: 535.18px;
+    height: 500px;
+    margin-top: 104px;
+    margin-left: 115px;
+    display: inline-block;/* quero na mesma linha da section, e quero editar espacamento*/
+}
+
+section{
+    display: inline-block;
+    margin-left: 100px;
+    
+}
+
+h1{
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 92px;
+    color: #161a49;
+    width: 545px;
+    margin-top: 4px;
+    
+}
+
+p{
+   
+    font-weight: 350px;
+    font-size: 20px;
+    line-height: 33px;
+    width: 480px;/*para o texto crescer para cima, largura do texto*/
+    align-items: center;
+    text-align: justify;
+    margin-top: 50px;
+}
+.foot-link{
+    color: #6fbf44 ;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 19px;
+    
+}
