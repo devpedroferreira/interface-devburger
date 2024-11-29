@@ -42,6 +42,7 @@ header{
     display: inline-block;/* quero na mesma linha da section, e quero editar espacamento*/
 }
 
+/* o width dentro da section define a largura do h1 e paragrafo*/
 section{
     display: inline-block;
     margin-left: 100px;
@@ -59,7 +60,7 @@ h1{
 }
 
 p{
-   
+    /* add margin-bottom para distancia de cima h1 e distancia para o LEARN MORE p baixo*/
     font-weight: 350px;
     font-size: 20px;
     line-height: 33px;
@@ -68,10 +69,14 @@ p{
     text-align: justify;
     margin-top: 50px;
 }
+
 .foot-link{
     color: #6fbf44 ;
     font-size: 18px;
     font-weight: 500;
     line-height: 19px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
     
 }
