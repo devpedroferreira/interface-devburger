@@ -7,7 +7,11 @@
 }
 
 header{
+<<<<<<< HEAD:2024/DevClub/css/project_1/wecare_style.css
     margin: 44px 0 80px 76px;/* tecnica do relogio sentido horario*/
+=======
+    margin: 24px 0 15px 76px;/* tecnica do relogio sentido horario*/
+>>>>>>> main:2024/DevClub/css/project_1_wecare_pet/style.css
 }
 
 .header-link{
@@ -88,6 +92,12 @@ p{
     font-size: 30px;
     line-height: 32px;
     color: #000000; 
+<<<<<<< HEAD:2024/DevClub/css/project_1/wecare_style.css
+=======
+    display: flex;
+    justify-content: center;
+    padding-top:15px;
+>>>>>>> main:2024/DevClub/css/project_1_wecare_pet/style.css
 }
 
 h5{
