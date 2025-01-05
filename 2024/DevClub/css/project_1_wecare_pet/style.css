@@ -7,11 +7,7 @@
 }
 
 header{
-<<<<<<< HEAD:2024/DevClub/css/project_1/wecare_style.css
-    margin: 44px 0 80px 76px;/* tecnica do relogio sentido horario*/
-=======
     margin: 24px 0 15px 76px;/* tecnica do relogio sentido horario*/
->>>>>>> main:2024/DevClub/css/project_1_wecare_pet/style.css
 }
 
 .header-link{
@@ -28,19 +24,21 @@ header{
     height: 41px;
     background: #665ae1;
     border-radius: 20.5px;
-   /* border: none;*/
-    border: 2px dotted rgb(255, 2, 242);/* tamanho estilo cor */
+    border: none;
+    /*border: 2px dotted rgb(255, 2, 242);/* tamanho estilo cor */
     font-weight: 600px;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 29px;
     color: #ffffff; 
     cursor: pointer;  
+    
+    justify-content: center;
+    padding-top:6px;
 }
 
 .logo-img{
-    margin-top: 32px;
-    width: 548px;
-    height: 480px; 
+    width: 568px;
+    height: 500px; 
     margin-left: 100px;
     display: inline-block;/* quero na mesma linha da section, e quero editar espacamento*/
 
@@ -49,26 +47,25 @@ header{
 section{
     display: inline-block;
     margin-left: 86px;
-    
 }
 
 h1{
    font-weight: 900;
-   font-size: 90px;
-   line-height: 80px;
+   font-size: 100px;
+   line-height: 122px;
    color: #515151; 
 }
 
 h2{
     font-weight: 500;
-    font-size: 48px;
-    line-height: 60px;
+    font-size: 58px;
+    line-height: 71px;
     color: #515151;
 }
 
 p{
-    margin-top: 12px;
-    margin-bottom: 10px;
+    margin-top: 32px;
+    margin-bottom: 45px;
     font-weight: 400;
     font-size: 24px;
     line-height: 29px;
@@ -79,8 +76,6 @@ p{
 }
 
 .main-button{
-    text-align: center;
-    align-items: center;
     background: #adff00;
     border-radius: 20.5px;
     width: 239px;
@@ -92,15 +87,59 @@ p{
     font-size: 30px;
     line-height: 32px;
     color: #000000; 
-<<<<<<< HEAD:2024/DevClub/css/project_1/wecare_style.css
-=======
     display: flex;
-    justify-content: center;
-    padding-top:15px;
->>>>>>> main:2024/DevClub/css/project_1_wecare_pet/style.css
+    justify-content: center;/*alinhar texto no botton*/
+    padding-top:15px;/*alinhar texto no botton*/
 }
+/* responsive for mobile */
+@media screen and (max-width: 800px){
+    main{
+        width: 100%;
+        height: 50%;
+        margin: 0;
+        padding: 0;
+    }
 
-h5{
-    color: #000000;
-    text-align: right;
+    .header{
+    display: none;
+    }
+
+    p{
+        display: none;
+    }
+
+    .logo-img{
+        margin-top: 75px;
+        width:330px;
+        height: 390px;
+        margin-left: 19px ;
+    }
+
+    h1{
+        width: 290px;
+        height: 52px;
+        font-size: 52px;
+        font-weight: 900;
+        line-height: 70px;
+        margin-left: -30px;
+    }
+
+    h2{
+        width: 290px;
+        height: 37px;
+        /* position*/
+        font-size: 36px;
+        font-weight: 500px;
+        line-height: 80px;
+        margin-left: -10px;
+
+    }    
+
+    .main-button{
+        font-weight: 790;
+        margin-left: -18px;
+        border-radius: 50px;
+        position:relative;
+        bottom: -40px;       
+    }
 }

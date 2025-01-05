@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;
+}
+
+body{
+    background: url('https://picsum.photos/1600/900');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /*  altura do item tela toda para ocupar e centralizar*/
+}
+
+.container{
+    padding:20px; /* aplicou 20px na borda da div*/
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex; /* deixa todos na mesma linha */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+p{
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px;
+    
+}
+#res{
+    background: rgb(255, 51, 149);
+    border-radius: 20px;
+}
+.buttons{
+    margin: 20px 0px;
+    display: flex;
+    gap: 30px;
+}
+button{
+    padding: 30px;
+    font-size: 70px; /* aumenta o tamanho do icone */
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+button:hover{
+    opacity: 0.7;
+}
+
+#rock{
+    background-color: #ad51e2;
+}
+
+#paper{
+    background-color: #00b71e;
+}
+
+#scissors{
+    background-color: #e5680f;
+}
+
+.your-score span{
+    color: rgb(37, 130, 180);
+}
+
+.machine-score span{
+    color: red;
+}

@@ -1,0 +1,29 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+div{
+    width: 500px;
+    height: 500px;
+    background-color: blue;
+}
+
+/* condicional - put condition: */
+/* ate 600px no maaximo, a tela fica vermelha,
+ passou fica azul*/
+@media screen and (max-width:400px) and (orientation:landscape){
+    div{
+        background: red;
+        width: 300px;
+        height: 300px;
+    }
+}
+/* de 900px para frente, no min 900*/
+@media (min-width:700px){
+    div{
+        background: purple;
+    }
+}
