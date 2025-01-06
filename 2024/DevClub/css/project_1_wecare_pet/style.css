@@ -145,4 +145,7 @@ button:hover{
         position:relative;
         bottom: -40px;       
     }
+    button:hover{
+        opacity: 0.8;
+    }
 }
