@@ -91,6 +91,9 @@ p{
     justify-content: center;/*alinhar texto no botton*/
     padding-top:15px;/*alinhar texto no botton*/
 }
+button:hover{
+    opacity: 0.8;
+}
 /* responsive for mobile */
 @media screen and (max-width: 800px){
     main{
