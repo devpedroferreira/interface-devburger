@@ -8,15 +8,16 @@ get color extension chrome
 12de51 verde*/
 }
 .main-gif{
-    width: 300px;
-    height: 300px;
+    border-radius: 10px;
+    width: 220px;
+    height: 220px;
     display: flex;/* use display block/flex for centralize item*/
     margin: 10px auto; /* for aling center, use auto right/left */
 }
 body{
     /* paddding cresce de dentro pra fora */
     /* margin se descola da borda pra dentro, espaço da borda pra fora*/
-    background-color: #8a51fc;
+    background-color: #EA6323;
 }
 main{/*default div/main/section display block*/
     width: 375px;
