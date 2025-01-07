@@ -1,0 +1,16 @@
+ 
+    h1{
+      color:blueviolet ; 
+        background: rgb(81, 232, 10);
+    }
+
+    p{
+        color: coral;
+        font-size: 20px;
+    }
+
+    button{
+        background: greenyellow;
+        border-color: deeppink;
+    }
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact search</title>
+</head>
+    <body>
+        <input placeholder="Digite o nome do contato"/>
+        <p></p>
+        <!-- 1 STEP -->
+        <button onclick="search()" >Procurar Contato</button>    
+    </body>
+
+<script>
+// map Paragrano in html for return
+let p = document.querySelector('p')
+let input = document.querySelector('input')
+
+const contacts =[
+    {name:'Rodolfo',     number:'(19) 94343-3431'},
+    {name:'Ana',         number:'(19) 94343-3432'},
+    {name:'Bruna',       number:'(19) 94343-3433'},
+    {name:'Carol',       number:'(19) 94343-3434'},
+]
+
+// 2 STEP
+function search(){
+    
+    //console.log('nome digitado: ', input.value)
+    for(let i = 0; i < contacts.length ;i++){
+        //console.log(contacts[i].name)
+        // toLowerCase para ficar MINUSCULA NA HORA DO TEST
+        if ( input.value.toLowerCase() === contacts[i].name.toLowerCase() ){
+        
+            p.innerHTML = `Contato: ${contacts[i].name} Tel: ${contacts[i].number}`
+            break // sem o brak nao funciona
+        }  
+        else{
+
+        //console.log("Contato nao encontrado!!!")
+        p.innerHTML = ("Contato nao encontrado!!!")
+       
+        }
+
+    }
+}
+
+</script>
+</html>

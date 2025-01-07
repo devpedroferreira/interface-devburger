@@ -1,0 +1,93 @@
+/*
+    POSITION
+
+    1-position: static(padrao) - Não aceita valores de top, bottom, right, left
+    
+    2-position: fixed - fixa o elemento na tela - elemento flutua o de baixo fica atras
+    
+    3-position: sticky - mix de fixed com static - usar top bottom left right, quando chegar na posicao ele para e fixa.
+
+    4-position: relative - posicao relativa a posicao inicial dele
+    
+    5-position absolute - absoluto e fixo, á algum elemento ou pagina
+    elemento flutua para frente os outros fica atras como no fixed
+
+    5.1 Se o pai for STATIC ou nao tiver DAD: position absolut move o filho em relacao a page
+
+    top
+    bottom
+    right
+    lefft
+*/
+*{  
+    margin:0;
+    padding:0;
+    box-sizing: border-box;/* para os elementos nao mudar de tamanho com os ajustes de style/border */
+    height: 200vh;/* altura de 2 telas*/
+    width: 200vw;/* largura de 2 telas*/
+}
+
+.dad{
+    color:#000000;
+    height:350px;
+    width:350px;
+    background-color: #ff0000;
+    position: fixed;/* flutua para frente os outros ficam atras, a pagina rola e o elemento fica fixo*/
+    /*usar top bottom left right para movimentar*/
+    top:135px;
+    left:450px;
+    opacity: 0.6;
+    /*margin:200px;/* 200 em all lado, elemento foi para o meio da tela*/
+}  
+
+.son{
+    height: 150px;
+    width:150px;
+    background-color: #ffff00;
+    
+}
+
+/* BOX2 AZUL SUPERIOR DIREITO*/
+.box2{
+    position: sticky;/* mix de fixed com static - usar top bottom left right, quando chegar na posicao ele para e fixa */
+    left:1000px;
+    top:50px;
+    height: 100px;
+    width: 100px;
+    background-color: darkblue;
+    font-size: 30px;
+    color: white;  
+}
+
+
+/* BOX_3 purple/GREEN*/
+/*position relative - desce 20px em relacao a posicao original*/
+.dad2{
+    position: relative;
+    top:60px;
+    height: 220px;
+    width: 150px;
+    background-color: rgb(236, 0, 236);   
+}
+
+.son2{
+    height: 130px;
+    width: 120px;
+    background: rgb(94, 255, 105);
+}
+
+/* DAD_3 ORANGE BOX*/
+.orange{
+    position: absolute;
+    top: 13px;
+    height: 225px;
+    width: 200px;
+    background-color: rgb(234, 92, 40);
+}
+/*se o pai for STATIC, ou nao tiver DAD: position absolut move o filho em relacao a page - */
+.son3{
+    height: 150px;
+    width: 150px;
+    background-color: black;
+    color: #ffffff;
+}

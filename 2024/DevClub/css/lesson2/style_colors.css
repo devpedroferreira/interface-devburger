@@ -1,0 +1,25 @@
+/* 1- forma usando R G B 
+sigla para: RED GREEN BLUE 
+ site:
+w3schools.com
+*/
+
+#sub-titulo{
+    background: rgb(255, 0, 0);
+    caret-color: rgb(75, 99, 89);
+    text-emphasis-color: rgb(255,255,255);
+}
+
+/* 2 - hexadecimal
+   combinaçao e 10 numeros para forma cores
+   base decimal         10 = 0,1,2,3,4,5,6,7,8,9
+   base hexa decimal    16 = 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F
+    site:
+   color.adobe.com
+   coolors.co
+*/
+.texto{
+    background: #9eff0f ;
+    color-scheme: #ff99ae;
+    text-decoration-color: #af11fa;
+}

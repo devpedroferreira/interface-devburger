@@ -1,0 +1,32 @@
+
+
+/*
+
+DISPLAY::after
+
+1. BLOCK: div,h1,h2,p, tudo vem com display block default
+reserva a linha inteira.
+
+2. INLINE: um na frente do outro na mesma linha, sequencia
+    nao aceita, margin, width, height.
+
+3. INLINE-BLOCK: mistura o ois em cima, porem na mesma linha.
+
+*/
+
+.box{
+    width: 50px;
+    height: 50px;
+    background: #ff1395;
+    margin: 10px;
+    display: inline-block;
+}
+
+.b2{
+    background: #ffff00;
+}
+
+.b3{ 
+    background: #0003f0;
+    color: white;
+}

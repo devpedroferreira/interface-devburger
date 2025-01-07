@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body{
+    background-color: black;
+}
+
+.container-buttons{
+    margin: 30px 0px ; /* 30 em cima e baixo 0 dos lados */
+    display: flex;
+    justify-content: center; /* alinha na horizontal */
+    align-items: center;    /* alinha na vertical */
+    gap: 20px; /* criar espaço entre os itens*/  
+}
+
+button{
+    background-color: #79cb15;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+button:hover{
+    background-color: #fff700;
+}
+p{
+    color:aliceblue;
+    font-size: 18px;
+    text-align: center;
+}
+ul{
+    list-style:none; /* remove as bolinhas da lista */
+    display: grid; /* seto linahs e colunas no meu layout*/
+    grid-template-columns: 300px 300px 300px ; /* 3 colunas de 200px */
+    gap:30px; /* espaço entre os itens */
+    justify-content: center; /* alinha na horizontal */
+}
+li{
+    border: 2px solid #79cb15;
+    border-radius: 30px;
+}
+img{
+    width: 100%;
+    border-radius: 30px;
+    display: flex;
+}
+.item-price{
+    color: #79cb15;
+}
