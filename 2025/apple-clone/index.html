@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Apple (Brasil)</title>
+        <!-- site 03/2023 -->
+</head>
+    <body>
+            <header>
+                <img class="logo" src="assets/logo.png" alt="logo-imagem-maca">
+                <ul> <!-- lista-->
+                    <li>Mac</li>
+                    <li>iPad</li>
+                    <li>iPhone</li>
+                    <li>Watch</li>
+                    <li>AirPods</li>
+                    <li>Tv e Casa</li>
+                    <li>Entretenimento</li>
+                    <li>Acessórios</li>
+                    <li>Suporte</li>
+
+                </ul>
+            </header>
+        
+            <div class="large-container">  
+               
+                <div class="text-container">
+
+                    <h1 class="iphone-title">iPhone 14</h1>
+                    <h2>Tão poderoso. Tão ao seu alcance.</h2>
+
+                    <p class="paragraph"> Em dois tamanhos perfeitos. Agora com toque de amarelo.</p>
+                    
+                    <h3 class="preco">A partir de R$ 533,25/mês ou R$ 5.799*</h3>
+                    <button class="buy">Comprar</button>
+
+                    <p class="text-change-color">Escolha sua cor:</p>
+                    <div class="iphone-colors">
+                        <button onclick="changeColor('#81a5c4'); changeImagem('./assets/iphone-azul.png')" class="azul change-color"></button>
+                        <button onclick="changeColor('#f7da47'); changeImagem('./assets/iphone-amarelo.png')" class="amarelo change-color"></button>
+                        <button onclick="changeColor('#c1c1c1'); changeImagem('./assets/iphone-branco.png')" class="branco change-color"></button>
+                        <button onclick="changeColor('#272d33'); changeImagem('./assets/iphone-preto.png')" class="preto change-color"></button>
+                        <button onclick="changeColor('#b50012'); changeImagem('./assets/iphone-vermelho.png')" class="vermelho change-color"></button>
+                        <button onclick="changeColor('#ede7f1'); changeImagem('./assets/iphone-roxo.png')" class="roxo change-color"></button>
+                    </div>
+                </div>
+                
+                <div class="circle"></div><!--efect back iphone-->
+                <img class="main-img" src="./assets/iphone-azul.png" alt="iPhone 14">
+            </div> 
+
+    </body>
+    <script src="script.js"></script>
+</html>
