@@ -5,9 +5,9 @@
 // jeito novo
 // no package.json adicionar "type": "module",
 import express from 'express';  
+
+// mongodb+srv://pedroofan:<db_password>@users.6suw3.mongodb.net/?retryWrites=true&w=majority&appName=users
 // user:pedroofan pass: 1JvVusFqL0QFfG8n // acess mongodb atlas
-
-
 
 
 // start server
