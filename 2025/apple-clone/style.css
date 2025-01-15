@@ -55,6 +55,7 @@ li{
                                      alinha items espaco entre texto e foto*/
     padding: 50px;    
     align-items: center; /*alinha na vertical no centro / alinhamento do items*/
+    margin-left: 120px;
 }
 
 .iphone-title{
