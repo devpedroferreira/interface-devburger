@@ -10,6 +10,7 @@ const { message } = pkg;
 
 // import prisma client
 import { PrismaClient } from '@prisma/client'
+import send from 'send';
 const prisma = new PrismaClient();
 
 // porta do servidor
@@ -66,7 +67,7 @@ app.delete('/users/:id', async (req, res) => {
     where: { id: req.params.id }
   });
 
-  res.status(200).json(userDeleted);
-
+  res.status(200).json(userDeleted) // resposta para o front-end
+  
 });
 

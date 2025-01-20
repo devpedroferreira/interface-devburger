@@ -84,6 +84,6 @@ app.delete('users/:id', async (req, res) => {
         }
     })
 
-    res.status(204).json({message: user,' : Usuário Deletado'}); // resposta para o front-end
+    res.status(200).json({message: user + ' : Usuário Deletado'}); // resposta para o front-end
 
 });
