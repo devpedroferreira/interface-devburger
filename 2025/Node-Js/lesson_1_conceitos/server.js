@@ -1,8 +1,13 @@
 // Date: 2021-17-01
 //import express
+// na integracao front-com-back instalar o CORS para resolver erro do navegador
+// npm install cors
 import express from 'express';
+import cors from 'cors';
+
 const app = express();
 app.use(express.json());// para express funcionar .json dentro da rota post
+app.use(cors()) // active CORS funcionar CORS
 
 // para funcionar o message .json dentro da rota post
 import pkg from 'statuses';
@@ -36,8 +41,9 @@ app.post('/users', async (req, res)  => {
       const userCreated =  await prisma.user.create({
               data: {
                   name: req.body.name,
-                  email: req.body.email,
-                  age:  req.body.age
+                  age:  req.body.age,
+                  email: req.body.email
+                  
               }
         });
 
@@ -51,8 +57,9 @@ app.put('/users/:id', async (req, res) => {
     where: { id: req.params.id },
     data: {
       name: req.body.name,
-      email: req.body.email,
-      age: req.body.age
+      age: req.body.age,
+      email: req.body.email
+      
     }
   });
 
