@@ -29,28 +29,32 @@ ul{
     gap: 40px;
     list-style-type: none;
 }
+li{
+    cursor: pointer;
+}
 
 .mainSection{
     display: flex;
-    align-items: center;
+    align-items: last baseline;
     margin-left: 90px;
     min-height: 80vh;
-
 }
 
-.mainSection h1{
-    font-size: 70px;
+.mainSection h3{
+    font-size: 30px;
     line-height: 1.1;
+    
     margin-bottom: 20px;
     letter-spacing: -3px;
 }
 
-.mainSection h1 span{
+.mainSection h3 span{
     color: orangered;
+    font-size: 54px;
 }
 
 .mainSection p{
-    font-size: 30px;
+    font-size: 22px;
     margin-bottom: 40px;
     max-width: 500px;
     color: #bbb;
@@ -65,6 +69,7 @@ ul{
     font-weight: bold;
     font-size: 25px;
     border-radius: 50px;
+    cursor: pointer;
 }
 
 h2{
@@ -121,4 +126,43 @@ h2 ::after{
     color: #4d7cef;
     font-weight: bold;
     cursor: pointer;
+}
+
+.aboutTitle{
+    margin-left: 90px;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+.aboutBox{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    text-align: left;
+}
+
+.mainImg{
+    width:50%;
+    border-radius: 60%;
+    margin-left: 90px;
+}
+
+.subTitleAbout{
+    font-size: 30px;
+    margin-bottom: 40px;
+    position: relative;
+    margin-left: -100px;
+}
+
+.aboutText h2{
+    font-size: 40px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.aboutText p{
+    font-size: 22px;
+    margin-bottom: 40px;
+    color: #bbb;
+    margin-left: -100px;
+    max-width: 60%;
 }
