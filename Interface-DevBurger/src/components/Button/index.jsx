@@ -6,7 +6,7 @@ export function Button({ children, ...props }) {
     return <ContainerButton {...props}>{children}</ContainerButton>
   </ContainerButton>
 }
-
+    
 Button.propTypes = {
   children: PropTypes.string,
 };
