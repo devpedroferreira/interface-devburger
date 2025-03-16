@@ -1,23 +1,32 @@
-import { useLayoutEffect } from 'react';
 import styled from 'styled-components';
-
-
+import LoginBg from '../../assets/loginBg.svg';
+import Background from '../../assets/background.svg';
 
 export const Container = styled.div`
     display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100vw;
     height: 100vh;
-    background-color:#b1b1b1;
+    
 `;
 
 export const LeftContainer = styled.div`
+    background : url(${LoginBg}); // get image from assets
+    background-size: cover;
+    background-position: center;
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    height: 100vh;
-    background-color: #000;
+
+    height: 100%;
+    width:  100%;
+    max-width: 50%;
+
+    img {
+        width: 180%;
+        height: 90%;
+        margin-left: 120px;
+    }
 `;
 
 export const RightContainer = styled.div` 
@@ -25,43 +34,76 @@ export const RightContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
+
     height: 100vh;
-    background-color: #B1B1B1;
+    width: 100%;
+    max-width: 50%;
+
+    //background: url('${Background}');
+    background-color: #1b1b1b;
+    background-size: cover;
+    
+    img{
+        width: 45%;
+        height: 40%;
+        margin-bottom: 20px;
+    }
 `;
 
 export const Title = styled.h2`
     font-size: 1.5rem;
-    color: #000;
+    color: #fff;
     text-align: center;
     margin-bottom: 20px;
+    span{
+        color: #f27613
+    }
 `;
 
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 60%;
     margin-bottom: 20px;
 `;
 
 export const InputContainer = styled.div`
     display: flex;
     flex-direction: column;
+    height: 60px;
     margin-bottom: 20px;
     border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bolder;
+    
+    label{
+        color: #f27613
+        
+    }
+
+    input{
+        height: 40px;
+        padding: 0 20px;
+        border: none;
+        border-radius: 25px;
+        background-color: #fff;
+        color: #000;
+    }
 `;
 
 export const Link = styled.a`
-    color: #000;
+    color: #f27613;
     text-decoration: none;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 `;
 
 export const Button = styled.button`
     width: 100%;
-    height: 40px;
+    height: 50px;
     background-color: #000;
     color: #fff;
+    font-size: 1.7rem;
+    font-weight: bolder;
     border: none;
     border-radius: 25px;
     cursor: pointer;

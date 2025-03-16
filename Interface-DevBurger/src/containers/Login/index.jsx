@@ -1,5 +1,6 @@
 import { Button, Container, Form, InputContainer, LeftContainer, Link, RightContainer, Title } from "./styles";
-import Logo from "../../assets/Logo 1.svg";
+import Logo from "../../assets/doubleLogo.png";
+import LogoBoss from "../../assets/04_logo_sf.png";
 
 export function Login(){
     return(
@@ -10,6 +11,7 @@ export function Login(){
             </LeftContainer>
 
             <RightContainer>
+                <img src={LogoBoss} alt="logo-burger-boss" />
                 <Title>Olá, seja bem vindo ao <span>Dev Burguer!</span></Title>
                 <Title>Acesse com seu <span>Login e senha.</span></Title>
                
@@ -29,7 +31,7 @@ export function Login(){
 
                 </Form>
                 <Link>Primeira vez aqui? 
-                    <span style={{ textDecoration: 'underline' }}>Crie sua conta</span></Link>
+                    <span style={{ textDecoration: 'underline' }}> Crie sua conta</span></Link>
             </RightContainer>
         </Container>
         
