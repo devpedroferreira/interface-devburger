@@ -1,4 +1,5 @@
-import { Button, Container, Form, InputContainer, LeftContainer, Link, RightContainer, Title } from "./styles";
+import { Container, Form, InputContainer, LeftContainer, Link, RightContainer, Title } from "./styles";
+import { ContainerButton } from "../../components/Button/styles.js";
 import Logo from "../../assets/doubleLogo.png";
 import LogoBoss from "../../assets/04_logo_sf.png";
 
@@ -27,7 +28,7 @@ export function Login(){
                     </InputContainer>
 
                     <Link>Esqueceu sua senha?</Link>
-                    <Button>Entrar</Button>
+                    <ContainerButton>Entrar</ContainerButton>
 
                 </Form>
                 <Link>Primeira vez aqui? 
