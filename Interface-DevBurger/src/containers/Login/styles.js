@@ -65,13 +65,23 @@ export const Form = styled.form`
     flex-direction: column;
     width: 60%;
     margin-bottom: 20px;
+
+    .RecuperarSenha{
+    font-size:80%;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #f27613;
+    text-decoration: none;
+    cursor:pointer;
+    }
+    
 `;
 
 export const InputContainer = styled.div`
     display: flex;
     flex-direction: column;
     height: 60px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     border-radius: 25px;
     font-size: 1rem;
     font-weight: bolder;
@@ -82,12 +92,18 @@ export const InputContainer = styled.div`
     }
 
     input{
-        height: 40px;
+        height: 35px;
         padding: 0 20px;
         border: none;
         border-radius: 25px;
         background-color: #fff;
         color: #000;
+    }
+    
+    span{
+        color: #b1b1b1;
+        font-size: 82%;
+        margin-top: 1%;
     }
 `;
 
