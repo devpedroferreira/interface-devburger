@@ -37,7 +37,7 @@ export function Login(){
             {/* Lado direito com o formulário de login */}
             <RightContainer>
                 <img src={LogoBoss} alt="logo-burger-boss" />
-                <Title>Olá, seja bem vindo ao <span>Dev Burguer!</span></Title>
+                <Title>Olá, seja bem vindo ao <span>Dev Burger!</span></Title>
                 <Title>Acesse com seu <span>Login e senha.</span></Title>
                
                 {/* Formulário de login com validação */}   
