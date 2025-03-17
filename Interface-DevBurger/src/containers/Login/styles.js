@@ -90,7 +90,7 @@ export const InputContainer = styled.div`
         color: #f27613
         
     }
-
+    
     input{
         height: 35px;
         padding: 0 20px;
@@ -99,11 +99,12 @@ export const InputContainer = styled.div`
         background-color: #fff;
         color: #000;
     }
-    
+    // span erro no input
     span{
         color: #b1b1b1;
         font-size: 82%;
         margin-top: 1%;
+        height: 10px; // para nao pular quando aparecer
     }
 `;
 
