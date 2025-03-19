@@ -68,7 +68,7 @@ export function Login(){
                     </InputContainer>
 
                     {/* Links e botão de submit */}
-                    <a class='RecuperarSenha'>Esqueceu sua senha?</a>
+                    <a className='RecuperarSenha'>Esqueceu sua senha?</a>
 
                     <ContainerButton type='submit'>Entrar</ContainerButton>
 
