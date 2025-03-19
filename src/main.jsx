@@ -4,7 +4,6 @@
   import GlobalStyle from './styles/globalStyles'; // Import the GlobalStyle
   import { Login } from './containers/Login';
 
-
   createRoot(document.getElementById('root')).render(
     <StrictMode>
     

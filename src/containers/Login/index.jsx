@@ -3,6 +3,9 @@ import { ContainerButton } from "../../components/Button/styles.js";
 import BossDouble from "../../assets/doubleLogo.png";
 import LogoBoss from "../../assets/04_logo_sf.png";
 
+// axios
+import {api} from '../../services/api.js'
+
 // Yup e hook form
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
@@ -20,9 +23,16 @@ export function Login(){
         resolver: yupResolver(schema)
     });
 
-    // Função para enviar os dados do formulário
-    const onSubmitFunction = (data) => {
-        console.log(data);
+    // Função para enviar os dados do formulário quando o usuário faz login
+    const onSubmitFunction = async (data) => {
+        // Faz uma requisição POST para a rota /session da API com email e senha
+        const response = await api.post('/session', {
+            email:      data.email,      // Email fornecido no formulário
+            password:   data.password    // Senha fornecida no formulário
+        });
+        
+        // TODO: Armazenar o token JWT retornado pela API no localStorage
+        console.log(response);           // Exibe a resposta da API no console
     };
 
     return(
