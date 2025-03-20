@@ -10,8 +10,10 @@ import {api} from '../../services/api.js'
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useState } from "react";
 
 export function Login(){
+    const [showPassword, setShowPassword] = useState(false); // show password login
     // Validação do formulário
     const schema = yup.object().shape({
         email: yup.string().email(' exemplo@email.com').required('Campo obrigatório'),
@@ -62,8 +64,20 @@ export function Login(){
 
                     {/* Campo de senha */}
                     <InputContainer>
-                        <label>Senha</label>
-                        <input type="password" {...register('password')} />
+                    <label>Senha</label>
+                        <div className="password-container">
+                            <input 
+                                type={showPassword ? "text" : "password"} 
+                                {...register('password')} 
+                            />
+                            <button
+                                type="button"
+                                className="eye-button"
+                                onClick={() => setShowPassword(!showPassword)}
+                            >
+                                {showPassword ? "👁️" : "👁️‍🗨️"}
+                            </button>
+                        </div>
                         <span>{errors.password?.message}</span>
                     </InputContainer>
 

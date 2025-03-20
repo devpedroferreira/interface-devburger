@@ -93,6 +93,7 @@ export const InputContainer = styled.div`
     
     input{
         height: 35px;
+        width: 100%;
         padding: 0 20px;
         border: none;
         border-radius: 25px;
@@ -105,6 +106,29 @@ export const InputContainer = styled.div`
         font-size: 82%;
         margin-top: 1%;
         height: 10px; // para nao pular quando aparecer
+    }
+
+    // eye button
+    .password-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .eye-button {
+        position: absolute;
+        right: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        
+        &:hover {
+            opacity: 0.8;
+        }
     }
 `;
 
