@@ -29,52 +29,49 @@ export function Login(){
 
     // Faz uma requisição POST para a rota /session da API com email e senha
     const onSubmitFunction = async (data) => {
-        
-        // toast to feedback visual
-        const response = await toast.promise(
-            api.post('/session', {
-                email:      data.email,      // Email fornecido no formulário
-                password:   data.password     // Senha fornecida no formulário
-            }),
-            {
-                pending: 'Verificando seus dados... 👨🏽‍💻',
-                success: {
-                    render({data}) {
-                        return 'Bem vindo ao Dev Burger! 🍔';
+        try {
+            // toast to feedback visual
+            const response = await toast.promise(
+                api.post('/session', {
+                    email: data.email,      // Email fornecido no formulário
+                    password: data.password  // Senha fornecida no formulário
+                }),
+                {
+                    pending: 'Verificando seus dados... 👨🏽‍💻',
+                    success: {
+                        render() {
+                            return 'Bem vindo ao Dev Burger! 🍔';
+                        },
+                        style: {
+                            background: '#1b1b1b',
+                            color: '#fff'
+                        }
                     },
-                    style: {
-                        background: '#1b1b1b',
-                        color: '#fff'
-                    }
-                },
-                error: {
-                    render({data}) {
-                        return 'Email ou senha incorretos 😕';
-                    },
-                    style: {
-                        background: '#1b1b1b',
-                        color: '#f27613'
+                    error: {
+                        render() {
+                            return 'Email ou senha incorretos 😕';
+                        },
+                        style: {
+                            background: '#1b1b1b',
+                            color: '#f27613'
+                        }
                     }
                 }
-            }
-        );
-        
-        try {
-            const response = await api.post('/session', {
-                email: data.email,
-                password: data.password
-            });
+            );
             
             // Save token in localStorage
             localStorage.setItem('@devburger:token', response.data.token);
             
+            // Armazenar o token JWT retornado pela API no localStorage
+            console.log(response); // Exibe a resposta da API no console
+            
+            // Aqui você pode adicionar navegação para próxima página
+            // Por exemplo: navigate('/dashboard');
+            
         } catch (err) {
             console.error(err);
+            // O toast de erro já será mostrado pelo toast.promise
         }
-
-         // TODO: Armazenar o token JWT retornado pela API no localStorage
-         console.log(response);           // Exibe a resposta da API no console
-
     };
 
        
@@ -102,7 +99,7 @@ export function Login(){
                         <input type="email" {...register('email')} />
                         <span>{errors.email?.message}</span>                    
                     </InputContainer>
-
+                    
                     {/* Campo de senha */}
                     <InputContainer>
                     <label>Senha</label>
