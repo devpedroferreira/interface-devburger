@@ -2,6 +2,8 @@ import { Container, Form, InputContainer, LeftContainer, Link, RightContainer, T
 import { ContainerButton } from "../../components/Button/styles.js";
 import BossDouble from "../../assets/doubleLogo.png";
 import LogoBoss from "../../assets/04_logo_sf.png";
+import {toast, ToastContainer} from 'react-toastify';
+
 
 // axios
 import {api} from '../../services/api.js'
@@ -25,18 +27,57 @@ export function Login(){
         resolver: yupResolver(schema)
     });
 
-    // Função para enviar os dados do formulário quando o usuário faz login
+    // Faz uma requisição POST para a rota /session da API com email e senha
     const onSubmitFunction = async (data) => {
-        // Faz uma requisição POST para a rota /session da API com email e senha
-        const response = await api.post('/session', {
-            email:      data.email,      // Email fornecido no formulário
-            password:   data.password    // Senha fornecida no formulário
-        });
         
-        // TODO: Armazenar o token JWT retornado pela API no localStorage
-        console.log(response);           // Exibe a resposta da API no console
+        // toast to feedback visual
+        const response = await toast.promise(
+            api.post('/session', {
+                email:      data.email,      // Email fornecido no formulário
+                password:   data.password     // Senha fornecida no formulário
+            }),
+            {
+                pending: 'Verificando seus dados... 👨🏽‍💻',
+                success: {
+                    render({data}) {
+                        return 'Bem vindo ao Dev Burger! 🍔';
+                    },
+                    style: {
+                        background: '#1b1b1b',
+                        color: '#fff'
+                    }
+                },
+                error: {
+                    render({data}) {
+                        return 'Email ou senha incorretos 😕';
+                    },
+                    style: {
+                        background: '#1b1b1b',
+                        color: '#f27613'
+                    }
+                }
+            }
+        );
+        
+        try {
+            const response = await api.post('/session', {
+                email: data.email,
+                password: data.password
+            });
+            
+            // Save token in localStorage
+            localStorage.setItem('@devburger:token', response.data.token);
+            
+        } catch (err) {
+            console.error(err);
+        }
+
+         // TODO: Armazenar o token JWT retornado pela API no localStorage
+         console.log(response);           // Exibe a resposta da API no console
+
     };
 
+       
     return(
     <div>
         {/* Container principal que divide a tela em duas partes */}
@@ -90,6 +131,9 @@ export function Login(){
                 <Link>Primeira vez aqui? 
                     <span style={{ textDecoration: 'underline' }}> Crie sua conta</span></Link>
             </RightContainer>
+
+        <ToastContainer autoClose={3000} theme="colored" />
+
         </Container>
         
     </div>

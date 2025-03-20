@@ -10,6 +10,20 @@ const GlobalStyle = createGlobalStyle`
     button {
         cursor: pointer;
     }
+
+    .Toastify__toast {
+        border-radius: 8px;
+        padding: 16px;
+    }
+
+    .Toastify__progress-bar {
+        background: #f27613;
+    }
+
+    .Toastify__close-button {
+        color: #fff;
+        opacity: 0.7;
+    }
 `;
 
 export default GlobalStyle; // Export the GlobalStyle
