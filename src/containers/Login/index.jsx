@@ -1,8 +1,19 @@
-import { Container, Form, InputContainer, LeftContainer, Link, RightContainer, Title } from "./styles";
-import { ContainerButton } from "../../components/Button/styles.js";
-import BossDouble from "../../assets/doubleLogo.png";
-import LogoBoss from "../../assets/04_logo_sf.png";
+import { Container, Form, InputContainer, LeftContainer, Link, RightContainer, Title } from './styles';
+import { ContainerButton } from '../../components/Button/styles.js';
+import LogoBoss from '../../assets/04_logo_sf.png';
 import {toast, ToastContainer} from 'react-toastify';
+import { useEffect, useState } from 'react';
+
+// slide burger boss
+import BossDouble from '../../assets/imgBurgers/doubleLogo.png';
+import BossAbacaxi from '../../assets/imgBurgers/bossAbacaxi.png';
+import BossCalabresa from '../../assets/imgBurgers/bossCalabresa.png';
+import BossCaramelo from '../../assets/imgBurgers/bossCaramelo.png';
+import BossCheddar from '../../assets/imgBurgers/bossCheddar.png';
+import BossChurrasco from '../../assets/imgBurgers/bossChurrasco.png';
+import BossMussarela from '../../assets/imgBurgers/bossMussarela.png';
+import BossOnion from '../../assets/imgBurgers/bossOnion.png';
+import BossQuarteirao from '../../assets/imgBurgers/bossQuarteirao.png';
 
 
 // axios
@@ -12,10 +23,38 @@ import {api} from '../../services/api.js'
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useState } from "react";
 
 export function Login(){
     const [showPassword, setShowPassword] = useState(false); // show password login
+    
+    // Estado para controlar o slider de imagens
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    
+    // Array com as imagens dos hamburgueres (adicione seus caminhos de imagens aqui)
+    const burgerImages = [
+        BossDouble,//1
+        BossAbacaxi,//2
+        BossCalabresa,//3
+        BossCaramelo,//4
+        BossCheddar,//5
+        BossChurrasco,//6
+        BossMussarela,//7 
+        BossOnion,//8 
+        BossQuarteirao //9
+    ];
+    
+    // Efeito para mudar a imagem a cada 2 segundos
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) => 
+                prevIndex === burgerImages.length - 1 ? 0 : prevIndex + 1
+            );
+        }, 4000);
+        
+        // Limpar o intervalo quando o componente for desmontado
+        return () => clearInterval(interval);
+    }, []);
+    
     // Validação do formulário
     const schema = yup.object().shape({
         email: yup.string().email(' exemplo@email.com').required('Campo obrigatório'),
@@ -79,9 +118,35 @@ export function Login(){
     <div>
         {/* Container principal que divide a tela em duas partes */}
         <Container>
-            {/* Lado esquerdo com a imagem do hamburguer */}
+            {/* Lado esquerdo com o slider de imagens de hamburguers */}
             <LeftContainer>
-                <img src={BossDouble} alt="Foto-hamburguer-boss-double" />
+                {/* Adicionando efeito de fade para transição suave entre imagens */}
+                <div className="slider-container">
+                    {burgerImages.map((image, index) => (
+                        <img 
+                            key={index} 
+                            src={image} 
+                            alt={`Hamburger-${index+1}`}
+                            className={index === currentImageIndex ? "active" : ""}
+                            style={{
+                                opacity: index === currentImageIndex ? 1 : 0,
+                                transition: 'opacity 0.7s ease-in-out',
+                                position: index === currentImageIndex ? 'relative' : 'absolute'
+                            }}
+                        />
+                    ))}
+                </div>
+                
+                {/* Indicadores do slider (opcional) */}
+                <div className="slider-indicators">
+                    {burgerImages.map((_, index) => (
+                        <span 
+                            key={index} 
+                            className={index === currentImageIndex ? "active-indicator" : "indicator"}
+                            onClick={() => setCurrentImageIndex(index)}
+                        />
+                    ))}
+                </div>
             </LeftContainer>
 
             {/* Lado direito com o formulário de login */}

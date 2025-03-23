@@ -10,7 +10,7 @@ export const Container = styled.div`
 `;
 
 export const LeftContainer = styled.div`
-    background : url(${LoginBg}); // get image from assets
+    background: url(${LoginBg});
     background-size: cover;
     background-position: center;
     
@@ -19,14 +19,102 @@ export const LeftContainer = styled.div`
     align-items: center;
 
     height: 100%;
-    width:  100%;
+    width: 100%;
     max-width: 50%;
+    
+    /* slide */
+    .slider-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-    img {
+    .slider-container img {
         width: 180%;
         height: 90%;
         margin-left: 120px;
+        object-fit: contain;
+        position: absolute;
+        transition: opacity 0.5s ease-in-out;
     }
+    /* 1 Boss Double */
+     .slider-container img[alt="Hamburger-1"] { /* BossAbacaxi */
+        margin-left: 18%; /* Moved 50px to the left */
+        width: 180%; /* Slightly larger */
+        height: 170%;
+    }
+    /* 2 Boss abacaxi */
+     .slider-container img[alt="Hamburger-2"] { /* BossAbacaxi */
+        margin-left: 2%; /* Moved 50px to the left */
+        width: 100%; /* Slightly larger */
+        height: 90%;
+    }
+    /* 3 Boss calabresa */
+     .slider-container img[alt="Hamburger-3"] { /* BossAbacaxi */
+        margin-left: 20%; /* Moved 50px to the left */
+        width: 180%; /* Slightly larger */
+        height: 200%;
+    }
+    /* 4 Boss Caramelo */
+     .slider-container img[alt="Hamburger-4"] { /* BossCaramelo */
+        width: 160%; /* Bigger size */
+        height: 200%;
+        margin-left: 2.5%; /* Adjusted position */
+        margin-bottom: 15%;
+    }
+    /* 5 Boss Cheddar */
+     .slider-container img[alt="Hamburger-5"] { /* BossCaramelo */
+        width: 160%; /* Bigger size */
+        height: 260%;
+        margin-left: 5%; /* Adjusted position */
+    }
+    /* 6 Boss Churras */
+     .slider-container img[alt="Hamburger-6"] { /* BossCaramelo */
+        width: 100%; /* Bigger size */
+        height: 90%;
+        margin-left: 10%; /* Adjusted position */
+    }
+    /* 7 Bos Mussarela */
+     .slider-container img[alt="Hamburger-7"] { /* BossCaramelo */
+        width: 100%; /* Bigger size */
+        height: 300%;
+        margin-left: 30px; /* Adjusted position */
+    }
+    /* 8 Boss Onion */
+     .slider-container img[alt="Hamburger-8"] { /* BossCaramelo */
+        width: 100%; /* Bigger size */
+        height: 110%;
+        margin-left: 30px; /* Adjusted position */
+    }
+    /* 9 Boss Quateirao */
+     .slider-container img[alt="Hamburger-9"] { /* BossCaramelo */
+        width: 110%; /* Bigger size */
+        height: 100%;
+        margin-left: 30px; /* Adjusted position */
+    }
+    .slider-container img.active {
+        z-index: 1;
+        opacity: 1;
+    }
+
+    .slider-container img:not(.active) {
+        opacity: 0;
+    }
+
+    .slider-indicators {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 2;
+    }
+
 `;
 
 export const RightContainer = styled.div` 
