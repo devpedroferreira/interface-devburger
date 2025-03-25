@@ -13,9 +13,7 @@
     
         <RouterProvider router={router} />
         <GlobalStyle />
-    
-
-        <ToastContainer
+        <ToastContainer // Login
          position="top-right"
          autoClose={3000}
          hideProgressBar={false}
@@ -27,5 +25,7 @@
          pauseOnHover={false}
          theme="dark"
           />
+
+          
     </StrictMode>,
   );

@@ -43,7 +43,7 @@ export function Login(){
         BossQuarteirao //9
     ];
     
-    // Efeito para mudar a imagem a cada 2 segundos
+    // Efeito para mudar a imagem a cada 4 segundos
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImageIndex((prevIndex) => 
