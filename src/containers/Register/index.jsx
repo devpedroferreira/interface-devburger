@@ -174,11 +174,8 @@ export function Register() {
                         <span className="error">{errors.confirmPassword?.message}</span>
                     </InputContainer>
 
-                    
-                </Form>
-
                      {/* Botão dentro do formulário */}
-                    <ContainerButton
+                     <ContainerButton
                         type="submit"
                         disabled={isSubmitting}
                         $isSubmitting={isSubmitting}
@@ -186,9 +183,12 @@ export function Register() {
                         {isSubmitting ? 'Cadastrando...' : 'Cadastrar Usuário'}
                     </ContainerButton>
 
-                <Link href="/login">
-                    Já tem conta? <span>Faça login</span>
-                </Link>
+                </Form>
+
+                    <Link href="/login">
+                    Já tem conta? <span style={{ textDecoration: 'underline' }}>Faça login</span>
+                    </Link>
+                    
             </RightContainer>
 
             <ToastContainer

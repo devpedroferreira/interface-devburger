@@ -124,7 +124,7 @@ export const RightContainer = styled.div`
     align-items: center;
 
     height: 100vh;
-    width: 100%;
+    width: 60%;
     max-width: 50%;
 
     //background: url('${Background}');
@@ -167,7 +167,7 @@ export const InputContainer = styled.div`
     }
     
     input{
-        height: 35px;
+        height: 27px;
         width: 100%;
         padding: 0 20px;
         border: none;
@@ -219,4 +219,11 @@ export const Link = styled.a`
     text-decoration: none;
     margin-bottom: 30px;
     cursor: pointer;
+
+    span {
+        text-decoration: underline;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
 `;

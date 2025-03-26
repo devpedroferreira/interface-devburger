@@ -225,4 +225,11 @@ export const Link = styled.a`
     text-decoration: none;
     margin-bottom: 30px;
     cursor: pointer;
+
+    span {
+        text-decoration: underline;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
 `;
