@@ -190,7 +190,7 @@ export function Login(){
                     <ContainerButton type='submit'>Entrar</ContainerButton>
 
                 </Form>
-                <Link>Primeira vez aqui? 
+                <Link href='/cadastro'>Primeira vez aqui? 
                     <span style={{ textDecoration: 'underline' }}> Crie sua conta</span></Link>
             </RightContainer>
 

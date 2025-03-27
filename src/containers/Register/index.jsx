@@ -64,11 +64,10 @@ export function Register() {
                 api.post('/users', {
                     name: data.name,
                     email: data.email,
-                    password_hash: data.password,  // Campo corrigido para password_hash
-                    admin: false
+                    password_hash: data.password // Campo corrigido para password_hash
                 }),
                 {
-                    pending: 'Verificando dados... 👨💻',
+                    pending: 'Verificando dados... 👨🏽‍💻',
                     success: {
                         render() {
                             navigate('/dashboard');
