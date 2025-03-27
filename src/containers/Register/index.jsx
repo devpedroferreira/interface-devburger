@@ -43,18 +43,29 @@ export function Register() {
 
     // Validação do formulário
     const schema = yup.object().shape({
-        name: yup.string().required('Nome obrigatório'),
-        email: yup.string().email('exemplo@email.com').required('Email obrigatório'),
-        password: yup.string()
-            .min(4, 'Mínimo 4 caracteres')
-            .required('Senha obrigatória'),
-        confirmPassword: yup.string()
-            .oneOf([yup.ref('password'), null], 'Senhas não coincidem')
-            .required('Confirme a senha')
-    });
+        name: yup
+        .string()
+        .min(3, 'Digite seu Nome')
+        .matches(/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/, 'Digite seu Nome')
+        .required('Nome obrigatório'),
+    email: yup
+        .string()
+        .email('exemplo@email.com')
+        .required('Email obrigatório'),
+    password: yup
+        .string()
+        .min(4, 'Mínimo 4 caracteres')
+        .required('Senha obrigatória'),
+    confirmPassword: yup
+        .string()
+        .oneOf([yup.ref('password'), null], 'Senhas não coincidem')
+        .required('Confirme a senha')
+});
 
+    // Hook form
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm({
-        resolver: yupResolver(schema)
+        resolver: yupResolver(schema),
+        mode: 'onChange'// msg schema validate real-time
     });
 
     // Submit do formulário
@@ -70,7 +81,9 @@ export function Register() {
                     pending: 'Verificando dados... 👨🏽‍💻',
                     success: {
                         render() {
-                            navigate('/dashboard');
+                            setTimeout(() => {
+                                navigate('/login');
+                            }, 2000); // 2000 milliseconds = 2 seconds
                             return 'Cadastro realizado! 🍔✨';
                         },
                         style: { background: '#1b1b1b', color: '#fff' }

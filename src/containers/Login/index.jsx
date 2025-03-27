@@ -23,8 +23,11 @@ import {api} from '../../services/api.js'
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useNavigate } from 'react-router-dom';
+
 
 export function Login(){
+    const navigate =useNavigate(); // navigate page
     const [showPassword, setShowPassword] = useState(false); // show password login
     
     // Estado para controlar o slider de imagens
@@ -57,13 +60,14 @@ export function Login(){
     
     // Validação do formulário
     const schema = yup.object().shape({
-        email: yup.string().email(' exemplo@email.com').required('Campo obrigatório'),
-        password: yup.string().min(4, ' Senha deve ter no mínimo 4 caracteres').required('Campo obrigatório')
+        email: yup.string().email('exemplo@email.com').required('Email obrigatório'),
+        password: yup.string().min(4, 'Mínimo 4 caracteres').required('Senha é obrigatório')
     });
 
     // Hook form
     const { register, handleSubmit, formState: { errors } } = useForm({
-        resolver: yupResolver(schema)
+        resolver: yupResolver(schema),
+        mode: 'onChange'// msg schema validate real-time
     });
 
     // Faz uma requisição POST para a rota /session da API com email e senha
@@ -79,7 +83,10 @@ export function Login(){
                     pending: 'Verificando seus dados... 👨🏽‍💻',
                     success: {
                         render() {
-                            return 'Bem vindo ao Dev Burger! 🍔';
+                            setTimeout(() => {
+                                navigate('/');
+                            }, 2000); // 2000 milliseconds = 2 seconds
+                            return 'Bem vindo ao Burger Boss! 🍔';
                         },
                         style: {
                             background: '#1b1b1b',
@@ -133,17 +140,6 @@ export function Login(){
                                 transition: 'opacity 0.7s ease-in-out',
                                 position: index === currentImageIndex ? 'relative' : 'absolute'
                             }}
-                        />
-                    ))}
-                </div>
-                
-                {/* Indicadores do slider (opcional) */}
-                <div className="slider-indicators">
-                    {burgerImages.map((_, index) => (
-                        <span 
-                            key={index} 
-                            className={index === currentImageIndex ? "active-indicator" : "indicator"}
-                            onClick={() => setCurrentImageIndex(index)}
                         />
                     ))}
                 </div>
