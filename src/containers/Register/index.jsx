@@ -96,7 +96,7 @@ export function Register() {
                     }
                 }
             );
-            localStorage.setItem('@devburger:token', response.data.token);
+            
         } catch (err) {
             console.error("Erro detalhado:", err.response?.data || err.message);
             throw err;
