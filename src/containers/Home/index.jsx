@@ -1,8 +1,11 @@
+import{ Banner, Container, Content } from './styles';
+
+
 export function Home() {
   return (
     <main>
         <Banner>
-            title="Bem vindo ao Burger Boss"
+            <h1> Bem vindo ao Burger Boss!</h1>t
         </Banner>
         <Container>
             <Content>
