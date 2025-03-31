@@ -5,12 +5,12 @@ export function Home() {
   return (
     <main>
         <Banner>
-            <h1> Bem vindo ao Burger Boss!</h1>t
+            <h1> Bem vindo ao <span> Burger Boss!</span></h1>t
         </Banner>
         <Container>
             <Content>
-                <div>Categorias</div>
-                <div>Produtos</div>
+                <div><strong>Categorias</strong></div>
+                <div><strong>Produtos</strong></div>
             </Content>
         </Container>
     </main>
