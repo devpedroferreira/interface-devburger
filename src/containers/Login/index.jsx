@@ -74,7 +74,8 @@ export function Login(){
     const onSubmitFunction = async (data) => {
         try {
             // toast to feedback visual
-            const response = await toast.promise(
+            const {data: {token},
+            } = await toast.promise(
                 api.post('/session', {
                     email: data.email,      // Email fornecido no formulário
                     password: data.password  // Senha fornecida no formulário
@@ -106,7 +107,7 @@ export function Login(){
             );
             
             // Save token in localStorage
-            localStorage.setItem('@devburger:token', response.data.token);
+            localStorage.setItem('@devburger:token', token);
             
             // Armazenar o token JWT retornado pela API no localStorage
             console.log(response); // Exibe a resposta da API no console
