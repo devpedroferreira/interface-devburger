@@ -7,6 +7,7 @@ export function Home() {
         <Banner>
             <h1> Bem vindo ao <span> Burger Boss!</span></h1>t
         </Banner>
+        
         <Container>
             <Content>
                 <CategoriesCarousel />

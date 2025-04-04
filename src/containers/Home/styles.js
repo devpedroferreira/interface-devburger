@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import BannerHome from '../../assets/bgHome.svg';
 import LoginBg from '../../assets/loginBg.svg';
 // This file contains styled components for the Home page
+
 export const Banner = styled.div`
     background: url(${BannerHome}) no-repeat center;
     background-size: cover;
@@ -37,32 +38,25 @@ export const Banner = styled.div`
 `;
 
 export const Container = styled.section`
-    background: linear-gradient(rgba(27,0,0, 100), rgba(27,27,27, 0.4), rgba(27,27,27, 0.5)),
+    background: linear-gradient(rgba(27,0,0, 0.8), rgba(27,27,27, 0.4), rgba(27,27,27, 0.5)),
     url(${LoginBg});
     background-size: cover;
 
     
-    height: 315px;
-    display: flex;
-    padding-left: 5%;
-    padding-right: 5%;
-
+    height: 700px;
 `;
 // carrossel
 export const Content = styled.div`
-    height: 280px;
-    width: 100%;
-    display: flex;  
-    gap: 20px;
-    margin-top: 20px;
-    
-    font-size: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 
-    div {
-        flex: 1;
-        padding: 20px;
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+  strong {
+    font-size: 42px;
+    color: #f27613;
+    display: block;
+    text-align: center;
+    margin: 40px 0 20px;
+  }
+  
 `;
