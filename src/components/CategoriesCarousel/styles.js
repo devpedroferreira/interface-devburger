@@ -20,31 +20,47 @@ export const Title = styled.h3`
   text-align: center;
 `;
 
-export const CategoryCard = styled.div`
+export const CategoryCard = styled.div.attrs(props => ({
+  style: {
+    backgroundImage: `url(${props.$imageUrl})`,
+  },
+}))`
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 15px;
+  justify-content: center;
+  background-color: #b1b1b1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
   transition: transform 0.3s ease;
-  
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+  }
+
   &:hover {
     transform: scale(1.05);
   }
 
-  h3 {  
-    font-size: 20px;
+  p {
     color: #fff;
+    font-size: 20px;
+    font-weight: bold;
     text-align: center;
-    font-weight: 400;
-    margin-top: 10px;
-  }
-
-  img {
-    width: 120px;
-    height: 120px;
-    border-radius: 8px;
-    object-fit: cover;
+    z-index: 1;
+    margin: 0;
+    padding: 10px;
+    position: relative;
   }
 `;

@@ -7,6 +7,8 @@ import { Container, CategoryCard, Title } from './styles';
 export function CategoriesCarousel() {
     const [categories, setCategories] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [imageErrors, setImageErrors] = useState({});
+    const token = localStorage.getItem('@devburger:token');
 
     const responsive = {
         superLargeDesktop: {
@@ -28,35 +30,52 @@ export function CategoriesCarousel() {
     };
 
     useEffect(() => {
-        async function fetchCategories() {
+        async function loadCategories() {
             try {
                 setIsLoading(true);
-                const response = await api.get('/categories');
-                console.log('Categories data:', response.data);
-                setCategories(response.data);
+                const { data } = await api.get('/categories');
+                
+                // Log raw data from API
+                console.log('Raw category data:', data);
+                
+                const categoriesWithUrls = data.map(category => ({
+                    ...category,
+                    imageUrl: category.url ? `${category.url}?token=${token}` : null
+                }));
+                
+                // Log processed data with URLs
+                console.log('Processed categories:', categoriesWithUrls);
+                
+                setCategories(categoriesWithUrls);
             } catch (error) {
-                console.error('Error fetching categories:', error.response || error);
+                console.error('Error fetching categories:', error);
             } finally {
                 setIsLoading(false);
             }
         }
 
-        fetchCategories();
-    }, []);
+        if (token) {
+            loadCategories();
+        }
+    }, [token]);
+
+    const handleImageError = (categoryId) => {
+        if (!imageErrors[categoryId]) {
+            setImageErrors(prev => ({
+                ...prev,
+                [categoryId]: true
+            }));
+            console.error(`Failed to load image for category ID: ${categoryId}`);
+        }
+    };
 
     if (isLoading) {
         return <Container><Title>Carregando categorias...</Title></Container>;
     }
 
-    if (categories.length === 0) {
-        return <Container><Title>Faça login</Title></Container>;
+    if (!categories.length) {
+        return <Container><Title>Nenhuma categoria encontrada</Title></Container>;
     }
-
-    const token = localStorage.getItem('@devburger:token');
-
-    const getImageUrl = (imageUrl) => {
-        return `${imageUrl}?token=${token}`;
-    };
 
     return (
         <Container>
@@ -65,23 +84,15 @@ export function CategoriesCarousel() {
                 itemClass='carousel-item'
                 responsive={responsive}
                 infinite={true}
-                autoPlay={true}
-                autoPlaySpeed={3000}
                 keyBoardControl={true}
-                showDots={false}
                 removeArrowOnDeviceType={["tablet", "mobile"]}
             >
-                 {categories.map(category => (
-                    <CategoryCard key={category.id}>
-                        <img 
-                            src={getImageUrl(category.url)}
-                            alt={category.name}
-                            onError={(e) => {
-                                console.error(`Error loading image for ${category.name}`);
-                                e.target.src = '/placeholder-burger.png';
-                            }}
-                        />
-                        <h3>{category.name}</h3>
+                {categories.map(category => (
+                    <CategoryCard 
+                        key={category.id} 
+                        $imageUrl={category.imageUrl}
+                    >
+                        <p>{category.name}</p>
                     </CategoryCard>
                 ))}
             </Carousel>
