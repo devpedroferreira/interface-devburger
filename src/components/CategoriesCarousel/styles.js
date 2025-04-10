@@ -20,11 +20,7 @@ export const Title = styled.h3`
   text-align: center;
 `;
 
-export const CategoryCard = styled.div.attrs(props => ({
-  style: {
-    backgroundImage: `url(${props.$imageUrl})`,
-  },
-}))`
+export const CategoryCard = styled.div`
   width: 200px;
   height: 200px;
   border-radius: 8px;
@@ -32,7 +28,7 @@ export const CategoryCard = styled.div.attrs(props => ({
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #b1b1b1;
+  background-image: ${({ $imageUrl }) => `url('${$imageUrl}')`};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
