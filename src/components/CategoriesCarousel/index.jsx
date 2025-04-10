@@ -2,7 +2,7 @@ import { api } from '../../services/api';
 import { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Container, CategoryCard, Title } from './styles';
+import { Container, CategoryCard, Title, Description, CategoryWrapper } from './styles';
 
 export function CategoriesCarousel() {
     const [categories, setCategories] = useState([]);
@@ -35,18 +35,13 @@ export function CategoriesCarousel() {
                 setIsLoading(true);
                 const { data } = await api.get('/categories');
                 
-                // Log raw data from API
-                //console.log('Raw Categories Data:', data);
-
-                // Add token to image URLs
+                // Add URL without token since we're handling auth in headers
                 const categoriesWithUrls = data.map(category => ({
                     ...category,
-                    imageUrl: `${category.url}?token=${token}`
+                    imageUrl: category.url // Remove token from URL
                 }));
-
-                // Log processed categories with URLs
-                //console.log('Categories with URLs:', categoriesWithUrls);
                 
+                //console.log('Categories loaded:', categoriesWithUrls);
                 setCategories(categoriesWithUrls);
             } catch (error) {
                 console.error('API Error:', error.response || error);
@@ -60,7 +55,7 @@ export function CategoriesCarousel() {
         } else {
             console.warn('No token found in localStorage');
         }
-    }, [token]); // Add token as dependency
+    }, [token]);
 
     if (isLoading) {
         return <Container><Title>Carregando categorias...</Title></Container>;
@@ -76,18 +71,16 @@ export function CategoriesCarousel() {
                 keyBoardControl={true}
                 removeArrowOnDeviceType={["tablet", "mobile"]}
             >
-                {categories.map(category => { // Log each category being rendered
-                    // log category
-                    //console.log(category);
-                    return (
-                        <CategoryCard 
-                            key={category.id} 
-                            $imageUrl={category.imageUrl} // Changed from category.url to category.imageUrl
-                        >
+                {categories.map(category => (
+                    <CategoryWrapper key={category.id}>
+                        <CategoryCard $imageUrl={category.url}>
                             <p>{category.name}</p>
                         </CategoryCard>
-                    );
-                })}
+                        <Description>
+                            {category.description || 'Sem descrição disponível'}
+                        </Description>
+                    </CategoryWrapper>
+                ))}
             </Carousel>
         </Container>
     );

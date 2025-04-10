@@ -20,6 +20,15 @@ export const Title = styled.h3`
   text-align: center;
 `;
 
+export const CategoryWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  padding: 10px;
+`;
+
 export const CategoryCard = styled.div`
   width: 200px;
   height: 200px;
@@ -35,6 +44,7 @@ export const CategoryCard = styled.div`
   position: relative;
   transition: transform 0.3s ease;
   cursor: pointer;
+  margin-bottom: 5px;
 
   &:before {
     content: '';
@@ -51,7 +61,7 @@ export const CategoryCard = styled.div`
 
   p {
     color: #fff;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
     z-index: 1;
@@ -59,4 +69,20 @@ export const CategoryCard = styled.div`
     padding: 10px;
     position: relative;
   }
+`;
+
+export const Description = styled.p`
+  font-size: 16px;
+  font-style: italic;
+  color: #f27613; // Changed to match the title color for consistency
+  text-align: center;
+  padding: 0 10px;
+  width: 100%;
+  max-width: 200px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500; // Added for better visibility
+  line-height: 1.4;
 `;
