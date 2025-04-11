@@ -10,15 +10,24 @@ export const Container = styled.div`
     justify-content: center;
     padding: 10px;
   }
+
+  @media (max-width: 370px) {
+    padding: 10px;
+  }
 `;
 
 export const Title = styled.h3`
   font-size: 42px;
   margin-bottom: 10px;
-  margin-top: -25px;
+  margin-top: -20px;
   color: #f27613;
   font-weight: 900;
   text-align: center;
+
+  @media (max-width: 370px) {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
 `;
 
 export const CategoryWrapper = styled.div`
@@ -28,19 +37,29 @@ export const CategoryWrapper = styled.div`
   gap: 10px;
   width: 100%;
   padding: 10px;
+
+  @media (max-width: 370px) {
+    padding: 5px;
+    gap: 5px;
+  }
 `;
 
 export const CategoryName = styled.h4`
   color: #fff;
-  font-size: 25px;
+  font-size: 28px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 5px;
+
+  @media (max-width: 360px) {
+    font-size: 18px;
+    margin-bottom: 3px;
+  }
 `;
 
 export const CategoryCard = styled.div`
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  height: 200px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -68,6 +87,18 @@ export const CategoryCard = styled.div`
     transform: scale(1.05);
   }
 
+  @media (max-width: 860px) {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 3px;
+  }
+
+  @media (max-width: 420px) {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 3px;
+  }
+
   p {
     color: #fff;
     font-size: 30px;
@@ -77,21 +108,34 @@ export const CategoryCard = styled.div`
     margin: 0;
     padding: 10px;
     position: relative;
+
+    @media (max-width: 370px) {
+      font-size: 20px;
+      padding: 5px;
+    }
   }
 `;
 
 export const Description = styled.p`
-  font-size: 16px;
+  font-size: 15px;
   font-style: italic;
-  color: #f27613; // Changed to match the title color for consistency
+  color: #f27613;
   text-align: center;
   padding: 0 10px;
   width: 100%;
-  max-width: 200px;
+  max-width: 190px;
   min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600; // Added for better visibility
+  font-weight: 600;
   line-height: 1.4;
+
+  @media (max-width: 370px) {
+    font-size: 14px;
+    padding: 0 5px;
+    max-width: 110px;
+    min-height: 30px;
+    line-height: 1.2;
+  }
 `;
