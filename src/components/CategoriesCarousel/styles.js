@@ -11,6 +11,19 @@ export const Container = styled.div`
     padding: 10px;
   }
 
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .react-multi-carousel-track {
+    transition: transform 500ms linear !important;
+  }
+
+  .react-multi-carousel-item {
+    transition: transform 500ms linear !important;
+  }
+
   @media (max-width: 370px) {
     padding: 10px;
   }
@@ -37,6 +50,7 @@ export const CategoryWrapper = styled.div`
   gap: 10px;
   width: 100%;
   padding: 10px;
+  transition: transform 0.3s ease-in-out;
 
   @media (max-width: 370px) {
     padding: 5px;
@@ -50,8 +64,9 @@ export const CategoryName = styled.h4`
   font-weight: bold;
   text-align: center;
   margin-bottom: 5px;
+  transition: color 0.3s ease;
 
-  @media (max-width: 360px) {
+  @media (max-width: 370px) {
     font-size: 18px;
     margin-bottom: 3px;
   }
@@ -70,9 +85,11 @@ export const CategoryCard = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  transition: transform 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   margin-bottom: 5px;
+  box-shadow: 0 4px 6px rgba(242, 118, 19, 0.1);
+  border: 2px solid transparent;
 
   &:before {
     content: '';
@@ -80,22 +97,26 @@ export const CategoryCard = styled.div`
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
   }
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 
+      0 8px 20px rgba(242, 118, 19, 0.4),
+      0 0 15px rgba(242, 118, 19, 0.4),
+      inset 0 0 10px rgba(242, 118, 19, 0.2);
+    border: 2px solid rgba(242, 118, 19, 0.5);
+
+    &:before {
+      background: rgba(0, 0, 0, 0.4);
+    }
   }
 
-  @media (max-width: 860px) {
+  @media (max-width: 370px) {
     width: 150px;
     height: 150px;
-    margin-bottom: 3px;
-  }
-
-  @media (max-width: 420px) {
-    width: 130px;
-    height: 130px;
     margin-bottom: 3px;
   }
 
@@ -108,6 +129,7 @@ export const CategoryCard = styled.div`
     margin: 0;
     padding: 10px;
     position: relative;
+    transition: all 0.3s ease;
 
     @media (max-width: 370px) {
       font-size: 20px;
@@ -130,6 +152,7 @@ export const Description = styled.p`
   justify-content: center;
   font-weight: 600;
   line-height: 1.4;
+  transition: all 0.3s ease;
 
   @media (max-width: 370px) {
     font-size: 14px;

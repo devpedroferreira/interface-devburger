@@ -70,6 +70,19 @@ export function CategoriesCarousel() {
                 infinite={true}
                 keyBoardControl={true}
                 removeArrowOnDeviceType={["tablet", "mobile"]}
+                autoPlay={true}
+                autoPlaySpeed={3500}
+                customTransition="transform 2000ms linear"
+                transitionDuration={2000}
+                containerClass="carousel-container"
+                pauseOnHover={true}
+                swipeable={true}
+                draggable={false}
+                arrows={false}
+                showDots={false}  // Changed to false
+                renderDotsOutside={false}  // Changed to false
+                rewind={false}
+                rewindWithAnimation={false}
             >
                 {categories.map(category => (
                     <CategoryWrapper key={category.id}>
