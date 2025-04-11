@@ -2,7 +2,7 @@ import { api } from '../../services/api';
 import { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Container, CategoryCard, Title, Description, CategoryWrapper } from './styles';
+import { Container, CategoryCard, Title, Description, CategoryWrapper, CategoryName } from './styles';
 
 export function CategoriesCarousel() {
     const [categories, setCategories] = useState([]);
@@ -73,8 +73,9 @@ export function CategoriesCarousel() {
             >
                 {categories.map(category => (
                     <CategoryWrapper key={category.id}>
+                        <CategoryName>{category.name}</CategoryName>
                         <CategoryCard $imageUrl={category.url}>
-                            <p>{category.name}</p>
+                            {/* Removed name from here */}
                         </CategoryCard>
                         <Description>
                             {category.description || 'Sem descrição disponível'}

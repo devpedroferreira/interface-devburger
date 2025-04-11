@@ -14,7 +14,8 @@ export const Container = styled.div`
 
 export const Title = styled.h3`
   font-size: 42px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  margin-top: -25px;
   color: #f27613;
   font-weight: 900;
   text-align: center;
@@ -24,14 +25,22 @@ export const CategoryWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   width: 100%;
   padding: 10px;
 `;
 
+export const CategoryName = styled.h4`
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5px;
+`;
+
 export const CategoryCard = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -83,6 +92,6 @@ export const Description = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 500; // Added for better visibility
+  font-weight: 600; // Added for better visibility
   line-height: 1.4;
 `;
