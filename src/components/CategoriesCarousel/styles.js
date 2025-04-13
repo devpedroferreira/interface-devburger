@@ -24,7 +24,11 @@ export const Container = styled.div`
     transition: transform 500ms linear !important;
   }
 
-  @media (max-width: 370px) {
+  @media (max-width: 640px) {
+    padding: 15px;
+  }
+
+  @media (max-width: 480px) {
     padding: 10px;
   }
 `;
@@ -37,9 +41,13 @@ export const Title = styled.h3`
   font-weight: 900;
   text-align: center;
 
-  @media (max-width: 370px) {
+  @media (max-width: 640px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 480px) {
     font-size: 28px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 `;
 
@@ -52,7 +60,12 @@ export const CategoryWrapper = styled.div`
   padding: 10px;
   transition: transform 0.3s ease-in-out;
 
-  @media (max-width: 370px) {
+  @media (max-width: 640px) {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  @media (max-width: 480px) {
     padding: 5px;
     gap: 5px;
   }
@@ -66,7 +79,11 @@ export const CategoryName = styled.h4`
   margin-bottom: 5px;
   transition: color 0.3s ease;
 
-  @media (max-width: 370px) {
+  @media (max-width: 640px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 480px) {
     font-size: 18px;
     margin-bottom: 3px;
   }
@@ -114,10 +131,19 @@ export const CategoryCard = styled.div`
     }
   }
 
-  @media (max-width: 370px) {
+  @media (max-width: 640px) {
+    width: 180px;
+    height: 180px;
+  }
+
+  @media (max-width: 480px) {
     width: 150px;
     height: 150px;
-    margin-bottom: 3px;
+  }
+
+  @media (max-width: 360px) {
+    width: 130px;
+    height: 130px;
   }
 
   p {
@@ -131,7 +157,12 @@ export const CategoryCard = styled.div`
     position: relative;
     transition: all 0.3s ease;
 
-    @media (max-width: 370px) {
+    @media (max-width: 640px) {
+      font-size: 24px;
+      padding: 8px;
+    }
+
+    @media (max-width: 480px) {
       font-size: 20px;
       padding: 5px;
     }
@@ -154,11 +185,20 @@ export const Description = styled.p`
   line-height: 1.4;
   transition: all 0.3s ease;
 
-  @media (max-width: 370px) {
+  @media (max-width: 640px) {
     font-size: 14px;
-    padding: 0 5px;
+    max-width: 160px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+    max-width: 130px;
+    min-height: 35px;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 12px;
     max-width: 110px;
     min-height: 30px;
-    line-height: 1.2;
   }
 `;
