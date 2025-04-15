@@ -4,7 +4,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Container, CategoryCard, Title, Description, CategoryWrapper, CategoryName } from './styles';
 
-export function CategoriesCarousel() {
+export function OfferCarousel() {
     const [categories, setCategories] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const token = localStorage.getItem('@devburger:token');
@@ -30,7 +30,7 @@ export function CategoriesCarousel() {
     };
 
     useEffect(() => {
-        async function loadCategories() {
+        async function loadOffer() {
             try {
                 setIsLoading(true);
                 const { data } = await api.get('/categories');
@@ -51,19 +51,19 @@ export function CategoriesCarousel() {
         }
 
         if (token) {
-            loadCategories();
+            loadOffer();
         } else {
             console.warn('No token found in localStorage');
         }
     }, [token]);
 
     if (isLoading) {
-        return <Container><Title>Carregando categorias...</Title></Container>;
+        return <Container><Title>Carregando Ofertas...</Title></Container>;
     }
 
     return (
         <Container>
-            <Title>Categorias</Title>
+            <Title>Promoções</Title>
             <Carousel 
                 itemClass='carousel-item'
                 responsive={responsive}
@@ -77,7 +77,7 @@ export function CategoriesCarousel() {
                 containerClass="carousel-container"
                 pauseOnHover={true}
                 swipeable={true}
-                draggable={false}
+                draggable={true}
                 arrows={false}
                 showDots={false}  // Changed to false
                 renderDotsOutside={false}  // Changed to false
@@ -91,7 +91,7 @@ export function CategoriesCarousel() {
                             {/* Removed name from here */}
                         </CategoryCard>
                         <Description>
-                            {category.description || 'Sem descrição disponível'}
+                            {category.description}
                         </Description>
                     </CategoryWrapper>
                 ))}

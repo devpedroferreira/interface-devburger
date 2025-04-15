@@ -43,7 +43,7 @@ export const Container = styled.section`
     background-size: cover;
 
     
-    height: 700px;
+    height: auto;
 `;
 // carrossel
 export const Content = styled.div`

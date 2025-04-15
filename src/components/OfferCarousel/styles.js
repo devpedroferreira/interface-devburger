@@ -16,14 +16,6 @@ export const Container = styled.div`
     overflow: hidden;
   }
 
-  .react-multi-carousel-track {
-    transition: transform 500ms linear !important;
-  }
-
-  .react-multi-carousel-item {
-    transition: transform 500ms linear !important;
-  }
-
   @media (max-width: 640px) {
     padding: 15px;
   }

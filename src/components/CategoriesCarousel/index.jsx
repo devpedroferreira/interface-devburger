@@ -9,7 +9,6 @@ export function CategoriesCarousel() {
     const [isLoading, setIsLoading] = useState(true);
     const token = localStorage.getItem('@devburger:token');
     
-
     const responsive = {
         superLargeDesktop: {
             breakpoint: { max: 4000, min: 1536 },
@@ -71,18 +70,18 @@ export function CategoriesCarousel() {
                 keyBoardControl={true}
                 removeArrowOnDeviceType={["tablet", "mobile"]}
                 autoPlay={true}
-                autoPlaySpeed={3500}
-                customTransition="transform 2000ms linear"
-                transitionDuration={2000}
+                autoPlaySpeed={8000}
+                swipeable={true}
+                draggable={true}
                 containerClass="carousel-container"
                 pauseOnHover={true}
-                swipeable={true}
-                draggable={false}
+                customTransition="transform 500ms linear"
+                transitionDuration={500}
                 arrows={false}
-                showDots={false}  // Changed to false
-                renderDotsOutside={false}  // Changed to false
-                rewind={false}
-                rewindWithAnimation={false}
+                showDots={false}
+                rewind={false}  // Added to prevent rewind
+                rewindWithAnimation={false}  // Added to prevent rewind animation
+                ssr={true}  // Added for better SSR support
             >
                 {categories.map(category => (
                     <CategoryWrapper key={category.id}>
@@ -91,7 +90,7 @@ export function CategoriesCarousel() {
                             {/* Removed name from here */}
                         </CategoryCard>
                         <Description>
-                            {category.description || 'Sem descrição disponível'}
+                            {category.description}
                         </Description>
                     </CategoryWrapper>
                 ))}
