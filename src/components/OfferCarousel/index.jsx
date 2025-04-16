@@ -58,7 +58,7 @@ export function OfferCarousel() {
     }, [token]);
 
     if (isLoading) {
-        return <Container><Title>Carregando Ofertas...</Title></Container>;
+        return <Container><Title>Carregando Promoções...</Title></Container>;
     }
 
     return (

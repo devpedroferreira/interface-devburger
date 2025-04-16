@@ -30,16 +30,44 @@ export const Title = styled.h3`
   margin-bottom: 10px;
   margin-top: -20px;
   color: #f27613;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 300px;
+  padding: 10px;
   font-weight: 900;
   text-align: center;
+  border-radius: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.4s ease;
+  outline: none;
+  border: 2px solid transparent;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 8px 20px rgba(242, 118, 19, 0.4),
+      0 0 15px rgba(242, 118, 19, 0.4),
+      inset 0 0 10px rgba(242, 118, 19, 0.2);
+    border: 2px solid rgba(242, 118, 19, 0.5);
+  }
 
   @media (max-width: 640px) {
     font-size: 32px;
+    width: 250px;
+    padding: 8px;
   }
 
   @media (max-width: 480px) {
     font-size: 28px;
     margin-bottom: 15px;
+    width: 220px;
+    padding: 6px;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 24px;
+    width: 200px;
+    padding: 5px;
   }
 `;
 
