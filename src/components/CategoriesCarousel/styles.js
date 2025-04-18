@@ -41,6 +41,8 @@ export const Title = styled.h3`
   transition: all 0.4s ease;
   outline: none;
   border: 2px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(242, 119, 19, 0.5);
 
   &:hover {
     transform: translateY(-7px);

@@ -83,6 +83,9 @@ export function OfferCarousel() {
                 renderDotsOutside={false}  // Changed to false
                 rewind={false}
                 rewindWithAnimation={false}
+                ssr={true} // means to render on server-side.
+                rtl={true} // means to render right-to-left.
+                direction="left"
             >
                 {categories.map(category => (
                     <CategoryWrapper key={category.id}>

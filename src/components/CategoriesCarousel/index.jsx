@@ -82,6 +82,7 @@ export function CategoriesCarousel() {
                 rewind={false}  // Added to prevent rewind
                 rewindWithAnimation={false}  // Added to prevent rewind animation
                 ssr={true}  // Added for better SSR support
+                
             >
                 {categories.map(category => (
                     <CategoryWrapper key={category.id}>
