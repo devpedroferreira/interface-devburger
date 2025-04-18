@@ -43,7 +43,7 @@ export const Title = styled.h3`
   border: 2px solid transparent;
 
   &:hover {
-    transform: translateY(-2px);
+    transform: translateY(-7px);
     box-shadow: 
       0 8px 20px rgba(242, 118, 19, 0.4),
       0 0 15px rgba(242, 118, 19, 0.4),

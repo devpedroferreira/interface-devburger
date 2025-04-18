@@ -42,12 +42,18 @@ export const Title = styled.h3`
   outline: none;
   border: 2px solid transparent;
 
+  // This is the animation for the hover effect
+  // It creates a glowing effect around the title
+  // and makes it look like it's pulsing
+  @keyframes pulse {
+    0% { box-shadow: 0 0 20px rgba(82, 242, 19, 0.6); }
+    50% { box-shadow: 0 0 40px rgba(84, 255, 16, 0.8); }
+    100% { box-shadow: 0 0 20px rgba(82, 242, 19, 0.6); }
+  }
+
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 
-      0 8px 20px rgba(82, 242, 19, 0.4),
-      0 0 15px rgba(82, 242, 19, 0.4),
-      inset 0 0 10px rgba(82, 242, 19, 0.2);
+    transform: translateY(-10px);
+    animation: pulse 2s infinite;
     border: 2px solid rgba(82, 242, 19, 0.5);
   }
 
