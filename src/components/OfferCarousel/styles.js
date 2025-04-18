@@ -106,6 +106,9 @@ export const CategoryName = styled.h4`
   text-align: center;
   margin-bottom: 5px;
   transition: color 0.3s ease;
+  cursor: pointer;
+  text-shadow: 0 0 10px rgba(82, 242, 19, 0.5);
+
 
   @media (max-width: 640px) {
     font-size: 22px;
