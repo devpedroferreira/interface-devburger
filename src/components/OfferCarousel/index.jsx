@@ -2,10 +2,10 @@ import { api } from '../../services/api';
 import { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Container, CategoryCard, Title, Description, CategoryWrapper, CategoryName } from './styles';
+import { Container, ProductCard, Title, Description, ProductWrapper, ProductName } from './styles';
 
 export function OfferCarousel() {
-    const [categories, setCategories] = useState([]);
+    const [offerProducts, setOfferProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const token = localStorage.getItem('@devburger:token');
     
@@ -29,29 +29,31 @@ export function OfferCarousel() {
         }
     };
 
+   
     useEffect(() => {
-        async function loadOffer() {
+        async function loadOfferProducts() {
             try {
                 setIsLoading(true);
-                const { data } = await api.get('/categories');
+                // First, get all products
+                const { data } = await api.get('/products');
                 
-                // Add URL without token since we're handling auth in headers
-                const categoriesWithUrls = data.map(category => ({
-                    ...category,
-                    imageUrl: category.url // Remove token from URL
+                // Filter only products with offer=true
+                const productsWithOffers = data.filter(product => product.offer).map(product => ({
+                    ...product,
+                    imageUrl: product.url // Use the URL from the product model
                 }));
                 
-                //console.log('Categories loaded:', categoriesWithUrls);
-                setCategories(categoriesWithUrls);
+                console.log('Offer Products:', productsWithOffers); // For debugging
+                setOfferProducts(productsWithOffers);
             } catch (error) {
                 console.error('API Error:', error.response || error);
             } finally {
                 setIsLoading(false);
             }
         }
-
+    
         if (token) {
-            loadOffer();
+            loadOfferProducts();
         } else {
             console.warn('No token found in localStorage');
         }
@@ -84,19 +86,22 @@ export function OfferCarousel() {
                 rewind={false}
                 rewindWithAnimation={false}
                 ssr={true} // means to render on server-side.
-                rtl={true} // means to render right-to-left.
-                direction="left"
-            >
-                {categories.map(category => (
-                    <CategoryWrapper key={category.id}>
-                        <CategoryName>{category.name}</CategoryName>
-                        <CategoryCard $imageUrl={category.url}>
-                            {/* Removed name from here */}
-                        </CategoryCard>
+                >
+                    {offerProducts.map(product => (
+                    <ProductWrapper key={product.id}>
+                        <ProductName>{product.name}</ProductName>
+                        <ProductCard $imageUrl={product.imageUrl}>
+                            <p className="price">
+                                {new Intl.NumberFormat('pt-BR', {
+                                    style: 'currency',
+                                    currency: 'BRL'
+                                }).format(product.price)}
+                            </p>
+                        </ProductCard>
                         <Description>
-                            {category.description}
+                            {product.description || `${product.categoryName} em Promoção!`}
                         </Description>
-                    </CategoryWrapper>
+                    </ProductWrapper>
                 ))}
             </Carousel>
         </Container>

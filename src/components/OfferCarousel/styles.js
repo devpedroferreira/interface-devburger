@@ -79,7 +79,7 @@ export const Title = styled.h3`
   }
 `;
 
-export const CategoryWrapper = styled.div`
+export const ProductWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,7 +99,7 @@ export const CategoryWrapper = styled.div`
   }
 `;
 
-export const CategoryName = styled.h4`
+export const ProductName = styled.h4`
   color: #fff;
   font-size: 28px;
   font-weight: bold;
@@ -120,7 +120,7 @@ export const CategoryName = styled.h4`
   }
 `;
 
-export const CategoryCard = styled.div`
+export const ProductCard = styled.div`
   width: 220px;
   height: 200px;
   border-radius: 8px;
