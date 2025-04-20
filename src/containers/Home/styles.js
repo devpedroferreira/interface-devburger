@@ -50,6 +50,7 @@ export const Content = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  height: auto;
 
   strong {
     font-size: 42px;

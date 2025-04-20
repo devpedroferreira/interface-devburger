@@ -43,7 +43,7 @@ export function OfferCarousel() {
                     imageUrl: product.url // Use the URL from the product model
                 }));
                 
-                console.log('Offer Products:', productsWithOffers); // For debugging
+                //console.log('Offer Products:', productsWithOffers); // For debugging
                 setOfferProducts(productsWithOffers);
             } catch (error) {
                 console.error('API Error:', error.response || error);
