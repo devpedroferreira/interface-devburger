@@ -199,7 +199,7 @@ export const ProductCard = styled.div`
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   margin-bottom: 5px;
-  box-shadow: 0 4px 6px rgba(242, 118, 19, 0.1);
+  box-shadow: 0 4px 6px rgba(82, 242, 19, 0.2);
   border: 2px solid transparent;
 
   p.price {
@@ -222,7 +222,7 @@ export const ProductCard = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 6px;
     transition: all 0.3s ease;
   }

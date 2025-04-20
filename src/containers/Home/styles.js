@@ -47,7 +47,7 @@ export const Container = styled.section`
 `;
 // carrossel
 export const Content = styled.div`
-  max-width: 1200px;
+  max-width: 1220px;
   margin: 0 auto;
   padding: 20px;
   height: auto;

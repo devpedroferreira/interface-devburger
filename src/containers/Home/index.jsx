@@ -6,7 +6,7 @@ export function Home() {
   return (
     <main>
         <Banner>
-            <h1> Bem vindo ao <span> Burger Boss!</span></h1>t
+            <h1> Bem vindo ao <span> Burger Boss!</span></h1>
         </Banner>
         
         <Container>
