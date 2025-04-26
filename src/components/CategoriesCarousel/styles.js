@@ -79,35 +79,22 @@ export const Title = styled.h3`
   }
 `;
 
-export const CategoryWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  padding: 10px;
-  transition: transform 0.3s ease-in-out;
-
-  @media (max-width: 640px) {
-    padding: 8px;
-    gap: 8px;
-  }
-
-  @media (max-width: 480px) {
-    padding: 5px;
-    gap: 5px;
-  }
-`;
-
 export const CategoryName = styled.h4`
   color: #fff;
   font-size: 28px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 5px;
-  transition: all 0.3s ease;
+  margin-bottom: 7px;
+  //transition: all 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   text-shadow: 0 0 10px rgba(242, 118, 19, 0.5);
+  position: relative;
+  z-index: 2;
+  
+  &:hover {
+    transform: translateY(-7px);  
+  }  
 
   @media (max-width: 640px) {
     font-size: 22px;
@@ -160,6 +147,35 @@ export const Description = styled.p`
   }
 `;
 
+export const CategoryWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 30px 10px;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+
+  &:hover {
+    ${CategoryName}, ${Description} {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+  }
+
+  @media (max-width: 640px) {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 5px;
+    gap: 5px;
+  }
+`;
+
 export const CategoryCard = styled.div`
   width: 220px;
   height: 200px;
@@ -192,14 +208,14 @@ export const CategoryCard = styled.div`
   &:hover {
     transform: scale(1.05) translateY(-5px);
     box-shadow: 
-      0 8px 20px rgba(242, 118, 19, 0.4),
-      0 0 15px rgba(242, 118, 19, 0.4),
-      inset 0 0 10px rgba(242, 118, 19, 0.2);
+    0 8px 20px rgba(242, 118, 19, 0.4),
+    0 0 15px rgba(242, 118, 19, 0.4),
+    inset 0 0 10px rgba(242, 118, 19, 0.2);
     border: 2px solid rgba(242, 118, 19, 0.5);
 
-    & ~ ${Description} {
+    & ~ ${CategoryName} {
       transform: translateY(-7px);
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.5);
       box-shadow: 
         0 8px 20px rgba(242, 118, 19, 0.6),
         0 0 15px rgba(242, 118, 19, 0.4),
@@ -209,8 +225,16 @@ export const CategoryCard = styled.div`
       animation: ${pulseOrange} 2s infinite;
     }
 
-    & + ${CategoryName} {
+    & ~ ${Description} {
       transform: translateY(-7px);
+      background: rgba(0, 0, 0, 0.5);
+      box-shadow: 
+        0 8px 20px rgba(242, 118, 19, 0.6),
+        0 0 15px rgba(242, 118, 19, 0.4),
+        inset 0 0 10px rgba(242, 118, 19, 0.2);
+      border: 2px solid rgba(242, 118, 19, 0.5);
+      border-radius: 40px;
+      animation: ${pulseOrange} 2s infinite;
     }
 
     &:before {

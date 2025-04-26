@@ -87,14 +87,10 @@ export function CategoriesCarousel() {
                 {categories.map(category => (
                     <CategoryWrapper key={category.id}>
                         <CategoryName>{category.name}</CategoryName>
-                        <CategoryCard $imageUrl={category.url}>
-                            {/* Removed name from here */}
-                        </CategoryCard>
-                        <Description>
-                            {category.description}
-                        </Description>
+                        <CategoryCard $imageUrl={category.url} />
+                        <Description>{category.description}</Description>
                     </CategoryWrapper>
-                ))}
+                                            ))}
             </Carousel>
         </Container>
     );

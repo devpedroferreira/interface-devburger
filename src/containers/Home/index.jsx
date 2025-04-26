@@ -12,6 +12,7 @@ export function Home() {
         
         <Container>
             <Content>
+              
                 <CategoriesCarousel />
 
                 <OfferCarousel />

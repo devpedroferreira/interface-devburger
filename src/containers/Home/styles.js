@@ -52,6 +52,7 @@ export const Content = styled.div`
   padding: 20px;
   height: auto;
 
+
   strong {
     font-size: 42px;
     color: #f27613;
