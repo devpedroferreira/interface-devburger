@@ -1,4 +1,10 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+
+const pulseOrange = keyframes`
+  0% { box-shadow: 0 0 20px rgba(242, 118, 19, 0.6); }
+  50% { box-shadow: 0 0 40px rgba(242, 118, 19, 0.8); }
+  100% { box-shadow: 0 0 20px rgba(242, 118, 19, 0.6); }
+`;
 
 export const Container = styled.div`
   padding: 20px;
@@ -99,7 +105,7 @@ export const CategoryName = styled.h4`
   font-weight: bold;
   text-align: center;
   margin-bottom: 5px;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
   text-shadow: 0 0 10px rgba(242, 118, 19, 0.5);
 
@@ -110,6 +116,47 @@ export const CategoryName = styled.h4`
   @media (max-width: 480px) {
     font-size: 18px;
     margin-bottom: 3px;
+  }
+`;
+
+export const Description = styled.p`
+  font-size: 15px;
+  font-style: italic;
+  color: #f27613;
+  text-align: center;
+  padding: 8px 15px;
+  width: 100%;
+  max-width: 190px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  line-height: 1.4;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid transparent;
+  text-shadow: 0 0 10px rgba(242, 118, 19, 0.3);
+
+  @media (max-width: 640px) {
+    font-size: 14px;
+    max-width: 160px;
+    padding: 6px 12px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+    max-width: 130px;
+    min-height: 35px;
+    padding: 5px 10px;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 12px;
+    max-width: 110px;
+    min-height: 30px;
+    padding: 4px 8px;
   }
 `;
 
@@ -149,6 +196,22 @@ export const CategoryCard = styled.div`
       0 0 15px rgba(242, 118, 19, 0.4),
       inset 0 0 10px rgba(242, 118, 19, 0.2);
     border: 2px solid rgba(242, 118, 19, 0.5);
+
+    & ~ ${Description} {
+      transform: translateY(-7px);
+      background: rgba(0, 0, 0, 0.7);
+      box-shadow: 
+        0 8px 20px rgba(242, 118, 19, 0.6),
+        0 0 15px rgba(242, 118, 19, 0.4),
+        inset 0 0 10px rgba(242, 118, 19, 0.2);
+      border: 2px solid rgba(242, 118, 19, 0.5);
+      border-radius: 40px;
+      animation: ${pulseOrange} 2s infinite;
+    }
+
+    & + ${CategoryName} {
+      transform: translateY(-7px);
+    }
 
     &:before {
       background: rgba(0, 0, 0, 0.4);
@@ -190,39 +253,5 @@ export const CategoryCard = styled.div`
       font-size: 20px;
       padding: 5px;
     }
-  }
-`;
-
-export const Description = styled.p`
-  font-size: 15px;
-  font-style: italic;
-  color: #f27613;
-  text-align: center;
-  padding: 0 10px;
-  width: 100%;
-  max-width: 190px;
-  min-height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  line-height: 1.4;
-  transition: all 0.3s ease;
-
-  @media (max-width: 640px) {
-    font-size: 14px;
-    max-width: 160px;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 13px;
-    max-width: 130px;
-    min-height: 35px;
-  }
-
-  @media (max-width: 360px) {
-    font-size: 12px;
-    max-width: 110px;
-    min-height: 30px;
   }
 `;

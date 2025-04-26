@@ -2,6 +2,7 @@ import { api } from '../../services/api';
 import { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { CartButton } from '../../components/CartButton';
 import { Container, ProductCard, Title, Description, ProductWrapper, ProductName } from './styles';
 
 export function OfferCarousel() {
@@ -98,6 +99,7 @@ export function OfferCarousel() {
                                 }).format(product.price)}
                             </p>
                         </ProductCard>
+                        <CartButton  />
                         <Description>
                             {product.description || `${product.categoryName} em Promoção!`}
                         </Description>
