@@ -9,7 +9,7 @@ const pulseOrange = keyframes`
 export const Container = styled.div`
   padding: 20px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 7px auto;
 
   .carousel-item {
     display: flex;
@@ -33,7 +33,7 @@ export const Container = styled.div`
 
 export const Title = styled.h3`
   font-size: 42px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   margin-top: -20px;
   color: #f27613;
   background-color: rgba(0, 0, 0, 0.5);
@@ -46,17 +46,17 @@ export const Title = styled.h3`
   margin-right: auto;
   transition: all 0.4s ease;
   outline: none;
-  border: 2px solid transparent;
+  border: 1px  transparent;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(242, 119, 19, 0.5);
 
   &:hover {
     transform: translateY(-7px);
-    box-shadow: 
+    box-shadow:
       0 8px 20px rgba(242, 118, 19, 0.4),
       0 0 15px rgba(242, 118, 19, 0.4),
       inset 0 0 10px rgba(242, 118, 19, 0.2);
-    border: 2px solid rgba(242, 118, 19, 0.5);
+    border: 1px transparent rgba(242, 118, 19, 0.5);
   }
 
   @media (max-width: 640px) {
@@ -79,6 +79,87 @@ export const Title = styled.h3`
   }
 `;
 
+export const CategoryCard = styled.div`
+  width: 220px;
+  height: 200px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: ${({ $imageUrl }) => `url('${$imageUrl}')`};
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  box-shadow: 0 4px 6px rgba(242, 118, 19, 0.2);
+  border: 2px solid transparent;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow:
+      0 8px 20px rgba(242, 118, 19, 0.4),
+      0 0 15px rgba(242, 118, 19, 0.4),
+      inset 0 0 10px rgba(242, 118, 19, 0.2);
+    border: 2px solid rgba(242, 118, 19, 0.5);
+
+    &:before {
+      background: rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  @media (max-width: 640px) {
+    width: 180px;
+    height: 180px;
+  }
+
+  @media (max-width: 480px) {
+    width: 150px;
+    height: 150px;
+  }
+
+  @media (max-width: 360px) {
+    width: 130px;
+    height: 130px;
+  }
+
+  p {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1;
+    margin: 0;
+    padding: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+
+    @media (max-width: 640px) {
+      font-size: 24px;
+      padding: 8px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 20px;
+      padding: 5px;
+    }
+  }
+`;
+
 export const CategoryName = styled.h4`
   color: #fff;
   font-size: 28px;
@@ -94,6 +175,8 @@ export const CategoryName = styled.h4`
   text-shadow: 0 0 10px rgba(242, 118, 19, 0.5);
   padding: 5px 15px;
   width: fit-content;
+  margin-top: 5px;
+  
 
   @media (max-width: 640px) {
     font-size: 22px;
@@ -157,31 +240,45 @@ export const CategoryWrapper = styled.div`
   transition: transform 0.3s ease-in-out;
   position: relative;
   margin-top: 45px;
-  margin-bottom: 45px;
+  margin-bottom: 5px;
 
   &:hover {
-    ${CategoryName} {
-      transform: translate(-50%, -7px);
-      background: rgba(0, 0, 0, 0.5);
-      box-shadow: 
-        0 8px 20px rgba(242, 118, 19, 0.6),
+    ${CategoryCard} {
+      transform: scale(1.05) translateY(-5px);
+      box-shadow:
+        0 8px 20px rgba(242, 118, 19, 0.4),
         0 0 15px rgba(242, 118, 19, 0.4),
         inset 0 0 10px rgba(242, 118, 19, 0.2);
       border: 2px solid rgba(242, 118, 19, 0.5);
+      
+
+      &:before {
+        background: rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    ${CategoryName} {
+      transform: translate(-50%, -7px);
+      //background: rgba(0, 0, 0, 0.5);
+      box-shadow:
+        0 8px 20px rgba(242, 118, 19, 0.6),
+        0 0 15px rgba(242, 118, 19, 0.4),
+        inset 0 0 10px rgba(242, 118, 19, 0.2);
+      border: 1px transparent rgba(242, 118, 19, 0.5);
       border-radius: 40px;
-      animation: ${pulseOrange} 2s infinite;
+      //animation: ${pulseOrange} 2s infinite;
     }
 
     ${Description} {
       transform: translateY(-7px);
       background: rgba(0, 0, 0, 0.5);
-      box-shadow: 
+      box-shadow:
         0 8px 20px rgba(242, 118, 19, 0.6),
         0 0 15px rgba(242, 118, 19, 0.4),
         inset 0 0 10px rgba(242, 118, 19, 0.2);
       border: 2px solid rgba(242, 118, 19, 0.5);
       border-radius: 40px;
-      animation: ${pulseOrange} 2s infinite;
+      //animation: ${pulseOrange} 2s infinite;
     }
   }
 
@@ -193,85 +290,5 @@ export const CategoryWrapper = styled.div`
   @media (max-width: 480px) {
     padding: 5px;
     gap: 5px;
-  }
-`;
-
-export const CategoryCard = styled.div`
-  width: 220px;
-  height: 200px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-image: ${({ $imageUrl }) => `url('${$imageUrl}')`};
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  margin-bottom: 5px;
-  box-shadow: 0 4px 6px rgba(242, 118, 19, 0.2);
-  border: 2px solid transparent;
-
-  &:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-    transition: all 0.3s ease;
-  }
-
-  &:hover {
-    transform: scale(1.05) translateY(-5px);
-    box-shadow:
-      0 8px 20px rgba(242, 118, 19, 0.4),
-      0 0 15px rgba(242, 118, 19, 0.4),
-      inset 0 0 10px rgba(242, 118, 19, 0.2);
-    border: 2px solid rgba(242, 118, 19, 0.5);
-
-    &:before {
-      background: rgba(0, 0, 0, 0.4);
-    }
-  }
-
-  @media (max-width: 640px) {
-    width: 180px;
-    height: 180px;
-  }
-
-  @media (max-width: 480px) {
-    width: 150px;
-    height: 150px;
-  }
-
-  @media (max-width: 360px) {
-    width: 130px;
-    height: 130px;
-  }
-
-  p {
-    color: #fff;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    z-index: 1;
-    margin: 0;
-    padding: 10px;
-    position: relative;
-    transition: all 0.3s ease;
-
-    @media (max-width: 640px) {
-      font-size: 24px;
-      padding: 8px;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 20px;
-      padding: 5px;
-    }
   }
 `;
