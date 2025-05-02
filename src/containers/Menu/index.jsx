@@ -10,22 +10,15 @@ export function Menu() {
             
             </BannerMenu>
 
-            <CategoryMenu>
-                
-            </CategoryMenu>
-            <ul>
-                <li>Hamburguer</li>
-                <li>Pizza</li>
-                <li>Pastel</li>
-                <li>Combos</li>
-            </ul>
+                <CategoryMenu>
+
+                        
+                </CategoryMenu>
+            
             <ProductsContainer>
 
 
             </ProductsContainer>
-                
-
-
         </Container>
     );
 }
