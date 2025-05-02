@@ -4,10 +4,12 @@ export function Menu() {
     return (
         <Container>
             <BannerMenu>
-                <h1>O melhor
-                
-                está aqui!</h1>
-            
+            <div className="banner-text">
+                <h1> O melhor
+                <br/> 
+                <span> Burger </span></h1>
+                <h2> está aqui!</h2>
+            </div>
             </BannerMenu>
 
                 <CategoryMenu>
