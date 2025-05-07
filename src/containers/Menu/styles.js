@@ -113,10 +113,32 @@ export const BannerMenu = styled.div`
 `;
 
 export const CategoryMenu = styled.div`
-    
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+
+    button {
+        padding: 10px 20px;
+        border: 2px solid #f27613;
+        background: transparent;
+        color: #fff;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+
+        &:hover, &.active {
+            background: #f27613;
+            transform: translateY(-2px);
+        }
+    }
 `;
 
-
 export const ProductsContainer = styled.div`
-    
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
 `;
