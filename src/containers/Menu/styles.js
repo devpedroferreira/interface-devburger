@@ -41,6 +41,8 @@ export const BannerMenu = styled.div`
 
     h1 {
         font-size: 50px;
+        line-height: 1.2;
+        font-weight: 900;       
         color: #fff;
         text-align: right;
         -webkit-text-stroke: 1px #000;
